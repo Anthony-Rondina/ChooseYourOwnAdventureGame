@@ -4,22 +4,35 @@ const { Schema, model } = mongoose;
 // make fruits schema
 const cardSchema = new Schema({
     img: String,
-    title: String,
+    chapter: String,
     cardNumber: Number,
-    nextCardNumber: Number,
-    prevCardNumber: Number,
-    challenge: Boolean,
+    choice1: { type: mongoose.Schema.Types.ObjectId, ref: 'Card' },
+    choice2: { type: mongoose.Schema.Types.ObjectId, ref: 'Card' },
+    choice3: { type: mongoose.Schema.Types.ObjectId, ref: 'Card' },
+    choice4: { type: mongoose.Schema.Types.ObjectId, ref: 'Card' },
+    previousCard: { type: mongoose.Schema.Types.ObjectId, ref: 'Card' },
+    previousCard2: { type: mongoose.Schema.Types.ObjectId, ref: 'Card' },
+    hasClue: Boolean,
+    clue1: { type: mongoose.Schema.Types.ObjectId, ref: 'Clue' },
+    clue2: { type: mongoose.Schema.Types.ObjectId, ref: 'Clue' },
+    hasChallenge: Boolean,
+    challengeTitle: String,
+    challengeImg: String,
     challengeDescription: String,
+    challengeType: String,//Strength, agility etc
     cardType: String,
     death: Boolean,
-    clue: Number,
+    choice1TransitionScentence: String,
+    choice2TransitionScentence: String,
+    choice3TransitionScentence: String,
+    choice4TransitionScentence: String,
+    returnTransitionScentence: String,
     sound: String,
     description: String,
-    chapter: Number,
-    drawClue: Boolean
+    chapterNumber: Number,
 });
 
-const card = model("card", cardSchema);
+const Card = model("Card", cardSchema);
 
 
-module.exports = card;
+module.exports = Card;

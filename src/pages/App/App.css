@@ -23,9 +23,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
-  padding: 2vmin;
+  background-color: #D3C1AE;
   height: 100vh;
+  overflow: hidden;
 }
 
 code {
@@ -66,6 +66,8 @@ code {
 .scroll-y {
   overflow-y: scroll;
 }
+
+
 
 .section-heading {
   display: flex;
@@ -155,4 +157,180 @@ form:invalid button[type="submit"] {
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
+}
+
+.createNewCard {
+  width: 500px;
+  /* border: solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  overflow: sc;
+
+}
+
+.newCardOuterWrapper {
+  width: 100vw;
+  height: auto;
+  /* border: solid green; */
+  display: flex;
+  justify-content: center;
+}
+
+input.largeCheckBox {
+  width: 40px;
+  height: 40px;
+}
+
+textarea {
+  width: 500px;
+  height: 250px;
+}
+
+.indexCard {
+  border: solid 1px black;
+  width: 200px;
+  height: 300px;
+}
+
+.indexPage {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1200px;
+  /* border: solid red; */
+  overflow: scroll;
+  height: 100%;
+}
+
+.cardBox {
+  position: absolute;
+  width: 600px;
+  min-width: 600px;
+  height: 700px;
+  min-height: 700px;
+  /* border: solid red; */
+  background-color: #D3C1AE;
+  border: solid rgb(255, 174, 24) 5px;
+  right: 0;
+  margin-top: -600px;
+  padding: 30px;
+  border-radius: 15px;
+  font-size: 12px;
+  /* overflow: scroll; */
+  transition-property: all;
+  transition-duration: 1s;
+  filter: drop-shadow(0 0 2rem black);
+  ;
+}
+
+.clueBox {
+  position: absolute;
+  width: 400px;
+  min-width: 400px;
+  height: 400px;
+  min-height: 400px;
+  /* border: solid red; */
+  background-color: #D3C1AE;
+  right: 0;
+  margin-top: 60px;
+  padding: 30px;
+  border-radius: 15px;
+  font-size: 12px;
+  /* overflow: scroll; */
+  transition-property: all;
+  transition-duration: 1s;
+  filter: drop-shadow(0 0 2rem black);
+}
+
+.clueBox:hover {
+  filter: drop-shadow(0 0 2rem black);
+}
+
+.hidden {
+  opacity: 0%;
+}
+
+main {
+  background-image: url("https://i.imgur.com/Z5gkzPu.jpgs");
+  /* border: solid black 15px; */
+  height: 100%;
+}
+
+.App {
+  /* background-image: url("https://i.imgur.com/Z5gkzPu.jpgs"); */
+  /* border: solid black 15px; */
+  height: 100%;
+
+}
+
+.chapNumBox {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gameBoard {
+  /* border: solid blue; */
+  display: flex;
+  justify-content: center;
+}
+
+.deck {
+  cursor: pointer;
+  height: 300px;
+  width: 220px;
+  margin-top: 150px;
+  margin-right: -700px;
+  filter: drop-shadow(0 0 1rem black);
+}
+
+.deck:hover {
+  filter: drop-shadow(0 0 1rem rgb(173, 171, 171));
+}
+
+.board {
+  position: absolute;
+  width: 400px;
+  height: 600px;
+  margin-top: 100px;
+  /* margin-left: 100px; */
+}
+
+.clue {
+  cursor: pointer;
+  position: absolute;
+  margin-left: 350px;
+  margin-top: 500px;
+  width: 200px;
+  height: 200px;
+  filter: drop-shadow(0 0 1rem black);
+}
+
+.clue:hover {
+  filter: drop-shadow(0 0 1rem rgb(146, 146, 146));
+}
+
+.logo {
+  font-size: 2rem;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  width: 60%;
+  background-color: red;
+  border-radius: 50px;
+  height: 40px;
+}
+
+header {
+  height: 120px;
+  background-image: linear-gradient(black, #d1ccb4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

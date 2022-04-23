@@ -197,10 +197,12 @@ textarea {
 }
 
 .indexPage {
+
   display: flex;
   flex-wrap: wrap;
-  border: solid blue 1px;
+  /* border: solid blue 1px; */
   width: 100vw;
+  height: 700px;
   /* border: solid red; */
   /* overflow: scroll; */
 }
@@ -536,4 +538,20 @@ header {
   position: absolute;
   margin-left: -10px;
   margin-top: -80px;
+}
+
+.pagination {
+  /* border: solid red 1px; */
+  display: flex;
+  font-size: 2em;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.page-item {
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+  border: solid red 5px;
+  margin: 10px;
 }

@@ -7,7 +7,7 @@ export const Pagination = ({ paginate, postsPerPage, totalPosts }) => {
         pageNumbers.push(i)
     }
     return (
-        <nav>
+        <div className='pageinationWrapper'>
             <div className="pagination">
                 {pageNumbers.map((number) => {
                     return (
@@ -15,6 +15,6 @@ export const Pagination = ({ paginate, postsPerPage, totalPosts }) => {
                     )
                 })}
             </div>
-        </nav >
+        </div >
     )
 }

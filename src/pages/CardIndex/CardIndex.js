@@ -15,13 +15,11 @@ export default function CardIndex({ setEditCard }) {
     useEffect(() => {
         (async () => {
             try {
-                const fetchCards = async () => {
-                    setLoading(true)
-                    const response = await axios.get(`http://localhost:3001/api/cards/`)
-                    setCards(response.data)
-                    setLoading(false)
-                }
-                fetchCards();
+
+                setLoading(true)
+                const response = await axios.get(`http://localhost:3001/api/cards/`)
+                setCards(response.data)
+                setLoading(false)
 
             } catch (err) {
                 console.log(`err`)
@@ -44,19 +42,7 @@ export default function CardIndex({ setEditCard }) {
             <Link to="/create"><button>Make a New Card</button></Link>
             <Posts setEditCard={setEditCard} cards={currentCards} loading={loading} />
             <Pagination postsPerPage={postsPerPage} totalPosts={cards.length} paginate={paginate} />
-            {/* <div className="indexPage">
 
-                {cards.map((card, idx) => {
-                    return (
-                        <div key={idx}>
-                            <Link to={`/cards/${card._id}`} onClick={() => { setEditCard(card) }}><div className='indexCard'>
-                                <h1>{`Card ${card.cardNumber}`}</h1>
-                                <p>{`The card number is ${card.chapter}`}</p>
-                            </div></Link>
-                        </div>
-                    )
-                })}
-            </div > */}
         </>
     )
 }

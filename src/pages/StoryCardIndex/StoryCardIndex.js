@@ -7,6 +7,7 @@ export default function StoryCardIndex(props) {
     const [toggle, setToggle] = useState(false)
     const [cardToggle, setCardToggle] = useState(false)
     const [clueToggle, setClueToggle] = useState(false)
+    const [red, setRed] = useState(3)
     const getData = (input) => {
         (async () => {
             try {
@@ -31,6 +32,18 @@ export default function StoryCardIndex(props) {
     const toggleClueView = () => {
         setClueToggle(!clueToggle)
     }
+    const increaseRed = () => {
+        if (red <= 7) {
+            setRed(red + 1)
+        }
+        console.log(red)
+    }
+    const decreaseRed = () => {
+        if (red >= 2) {
+            setRed(red - 1)
+        }
+        console.log(red)
+    }
     useEffect(() => {
         (async () => {
             try {
@@ -38,25 +51,32 @@ export default function StoryCardIndex(props) {
                 console.log(response)
                 setCards(response.data.foundCard)
                 console.log(cards)
+                console.log(`red is ${red}`)
             } catch (err) {
                 console.log(err)
                 console.log(cards)
+
             }
         })()
     }, [])
 
     useEffect(() => {
 
-    }, [toggle])
+    }, [toggle, red])
 
 
     return (
         <main>
             <Navbar />
+            <button onClick={increaseRed}>increase</button>
+            <button onClick={decreaseRed}>decrease</button>
             <div className="gameBoard">
+
                 <img className="board" src="https://i.imgur.com/bvCluet.png" />
                 <img onClick={toggleCardView} className="deck" src="https://i.imgur.com/wawdxow.png" />
                 <img onClick={toggleClueView} className="clue" src="https://i.imgur.com/UV0FA0B.png" />
+                <img className="yellowIcon" src="https://i.imgur.com/WGFsmeS.png" />
+                <img className={`redIcon red${red}`} src="https://i.imgur.com/VHepIiE.png" />
             </div>
             <div className={`cardBox`} style={{ opacity: cardToggle ? "100" : "0", right: cardToggle ? "0" : "-500px    " }}>
                 <div className="chapNumBox">

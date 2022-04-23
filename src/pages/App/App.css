@@ -214,7 +214,7 @@ textarea {
   background-color: #D3C1AE;
   border: solid rgb(255, 174, 24) 5px;
   right: 0;
-  margin-top: -600px;
+  margin-top: -500px;
   padding: 30px;
   border-radius: 15px;
   font-size: 12px;
@@ -234,7 +234,7 @@ textarea {
   /* border: solid red; */
   background-color: #D3C1AE;
   right: 0;
-  margin-top: 60px;
+  margin-top: 100px;
   padding: 30px;
   border-radius: 15px;
   font-size: 12px;
@@ -242,6 +242,8 @@ textarea {
   transition-property: all;
   transition-duration: 1s;
   filter: drop-shadow(0 0 2rem black);
+
+  border: red solid 3px;
 }
 
 .clueBox:hover {
@@ -321,6 +323,7 @@ main {
   color: white;
   text-align: center;
   width: 60%;
+  border: solid white 2px;
   background-color: red;
   border-radius: 50px;
   height: 40px;
@@ -328,9 +331,57 @@ main {
 
 header {
   height: 120px;
-  background-image: linear-gradient(black, #d1ccb4);
+  background-image: linear-gradient(rgb(53, 53, 53), #000000);
+  /* background-color: black; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.yellowIcon {
+  height: 100px;
+  position: absolute;
+  margin-top: 510px;
+
+}
+
+.redIcon {
+  height: 80px;
+  position: absolute;
+  margin-left: -140px;
+  transition-property: all;
+  transition-duration: 1s;
+}
+
+.red2 {
+  margin-top: 445px;
+}
+
+.red1 {
+  margin-top: 490px;
+}
+
+.red3 {
+  margin-top: 410px;
+}
+
+.red4 {
+  margin-top: 370px;
+}
+
+.red5 {
+  margin-top: 335px;
+}
+
+.red6 {
+  margin-top: 295px;
+}
+
+.red7 {
+  margin-top: 265px;
+}
+
+.red8 {
+  margin-top: 220px;
 }

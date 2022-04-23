@@ -94,21 +94,36 @@ export default function StoryCardIndex(props) {
         <main>
             <Navbar />
             <button className="openControls" onClick={toggleDrawerView}>Controls</button>
-            <button onClick={increaseRed}>increase</button>
-            <button onClick={decreaseRed}>decrease</button>
-            <button onClick={resetRed}>Reset</button>
-            <button onClick={increaseYellow}>increase</button>
-            <button onClick={decreaseYellow}>decrease</button>
-            <button onClick={resetYellow}>Reset</button>
-            <div className="counterWrapper">
 
-            </div>
+
+
+
+
             <div className="gameBoard">
                 <div className="drawer" style={{
                     left: drawerToggle ? "0" : "-348px    "
                 }}>
-                    <a href="https://www.youtube.com/watch?v=XCKQgJ0Eqlg" target="_blank"><button className="music">Play Creepy Music</button></a>
-                    <button className="controls" onClick={toggleDrawerView}>x</button>
+                    <button className="controls closeWindow" onClick={toggleDrawerView}>x</button>
+                    <div className="drawerContents">
+                        <div className="counterWrapperRed">
+                            <div className="counterButtons">
+                                <button onClick={decreaseRed}>&lt;</button>
+                                <span className="readout">Psychic Meter</span>
+                                <button onClick={increaseRed}>&gt;</button>
+                            </div>
+                            <button className="reset" onClick={resetRed}>Reset</button>
+                        </div>
+                        <div className="counterWrapperYellow">
+                            <div className="counterButtons">
+                                <button onClick={decreaseYellow}>&lt;</button>
+                                <span className="readout">Danger Meter</span>
+                                <button onClick={increaseYellow}>&gt;</button>
+                            </div>
+                            <button className="reset" onClick={resetYellow}>Reset</button>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=XCKQgJ0Eqlg" target="_blank"><button className="music">Play Creepy Music</button></a>
+
+                    </div>
                     <img className="drawerPic" src="https://i.imgur.com/zcaBRl6.png" />
 
 
@@ -138,11 +153,11 @@ export default function StoryCardIndex(props) {
                     cards.choice4TransitionScentence ? <button onClick={() => { getData(cards.choice4._id) }}>{cards.choice4TransitionScentence}</button> : ""
                 }
                 <button onClick={() => { getData(cards.choice1._id) }}>{cards.choice1TransitionScentence}</button>
-                <button onClick={toggleCardView}>x</button>
+                <button className="cardClose closeWindow" onClick={toggleCardView}>x</button>
             </div>
             <div className="clueBox" style={{ opacity: clueToggle ? "100" : "0", right: clueToggle ? "0" : "-500px    " }}>
                 <h1>clue</h1>
-                <button onClick={toggleClueView}>x</button>
+                <button className="clueClose closeWindow" onClick={toggleClueView}>x</button>
             </div>
         </main>
     )

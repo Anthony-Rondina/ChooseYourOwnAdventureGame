@@ -25,7 +25,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #D3C1AE;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 code {
@@ -124,8 +124,8 @@ input:focus {
 
 button,
 a.button {
-  margin: 1vmin;
-  padding: 1vmin;
+  margin: 10px;
+  padding: 10px;
   color: var(--white);
   background-color: var(--orange);
   font-size: 2vmin;
@@ -177,7 +177,7 @@ button[type="submit"] {
   /* border: solid green; */
   display: flex;
   justify-content: center;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 input.largeCheckBox {
@@ -199,10 +199,10 @@ textarea {
 .indexPage {
   display: flex;
   flex-wrap: wrap;
+  border: solid blue 1px;
   width: 100vw;
   /* border: solid red; */
-  overflow: scroll;
-  height: 100%;
+  /* overflow: scroll; */
 }
 
 .cardBox {
@@ -433,6 +433,7 @@ header {
   left: 0;
   width: 400px;
   height: 750px;
+  margin-top: 70px;
   transition-property: all;
   transition-duration: 1.5s;
 }
@@ -458,13 +459,81 @@ header {
   left: 280px;
   margin-top: 80px;
   z-index: 5;
-  background-color: crimson;
+}
+
+.closeWindow {
+  background-color: black;
+  padding-top: 2px;
+  padding-bottom: 4px;
 }
 
 .music {
-  position: relative;
-  width: 250px;
-  margin-left: 45px;
-  margin-top: 580px;
+  background-color: darkolivegreen;
+}
+
+.counterWrapperRed {
+  /* position: absolute;
+  margin-left: 60px; */
   z-index: 4;
+  /* margin-top: -520px; */
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.counterWrapperYellow {
+  /* position: absolute;
+  margin-left: 60px; */
+  z-index: 4;
+  /* margin-top: -320px; */
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.counterButtons {
+  margin-bottom: -20px;
+}
+
+.readout {
+  color: white;
+  border: solid .5px white;
+  margin-left: -10px;
+  margin-right: -10px;
+  background-color: black;
+  padding-top: 18px;
+  padding-bottom: 12px;
+  padding-right: 5px;
+  padding-left: 5px;
+  width: 100px;
+}
+
+.drawerContents {
+  position: absolute;
+  display: flex;
+  /* border: solid white; */
+  height: 500px;
+  width: 345px;
+  margin-top: 130px;
+  flex-direction: column;
+  align-items: center;
+  z-index: 4;
+  justify-content: space-around;
+}
+
+.reset {
+  padding: 0;
+  background-color: darkred;
+}
+
+.cardClose {
+  position: absolute;
+  margin-top: -415px;
+  margin-left: -500px;
+}
+
+.clueClose {
+  position: absolute;
+  margin-left: -10px;
+  margin-top: -80px;
 }

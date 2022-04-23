@@ -136,6 +136,7 @@ export default function StoryCardIndex(props) {
             </div>
             <div className={`cardBox`} style={{ opacity: cardToggle ? "100" : "0", right: cardToggle ? "0" : "-500px    " }}>
                 <div className="chapNumBox">
+                    <button className="cardClose closeWindow" onClick={toggleCardView}>x</button>
                     <h2>{cards.chapter}</h2>
                     <h2>{`Card #${cards.cardNumber}`}</h2>
                 </div>
@@ -153,11 +154,12 @@ export default function StoryCardIndex(props) {
                     cards.choice4TransitionScentence ? <button onClick={() => { getData(cards.choice4._id) }}>{cards.choice4TransitionScentence}</button> : ""
                 }
                 <button onClick={() => { getData(cards.choice1._id) }}>{cards.choice1TransitionScentence}</button>
-                <button className="cardClose closeWindow" onClick={toggleCardView}>x</button>
+
             </div>
             <div className="clueBox" style={{ opacity: clueToggle ? "100" : "0", right: clueToggle ? "0" : "-500px    " }}>
-                <h1>clue</h1>
                 <button className="clueClose closeWindow" onClick={toggleClueView}>x</button>
+                <h1>clue</h1>
+
             </div>
         </main>
     )

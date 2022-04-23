@@ -529,15 +529,11 @@ header {
 }
 
 .cardClose {
-  position: absolute;
-  margin-top: -415px;
-  margin-left: -500px;
+  height: 40px;
 }
 
 .clueClose {
-  position: absolute;
-  margin-left: -10px;
-  margin-top: -80px;
+  height: 40px;
 }
 
 .pagination {

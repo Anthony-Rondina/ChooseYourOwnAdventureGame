@@ -177,6 +177,7 @@ button[type="submit"] {
   /* border: solid green; */
   display: flex;
   justify-content: center;
+  overflow: scroll;
 }
 
 input.largeCheckBox {
@@ -198,7 +199,7 @@ textarea {
 .indexPage {
   display: flex;
   flex-wrap: wrap;
-  width: 1200px;
+  width: 100vw;
   /* border: solid red; */
   overflow: scroll;
   height: 100%;
@@ -218,7 +219,7 @@ textarea {
   padding: 30px;
   border-radius: 15px;
   font-size: 12px;
-  /* overflow: scroll; */
+  overflow: scroll;
   transition-property: all;
   transition-duration: 1s;
   filter: drop-shadow(0 0 2rem black);
@@ -456,7 +457,14 @@ header {
   position: absolute;
   left: 280px;
   margin-top: 80px;
-  /* transform: rotate(270deg); */
   z-index: 5;
   background-color: crimson;
+}
+
+.music {
+  position: relative;
+  width: 250px;
+  margin-left: 45px;
+  margin-top: 580px;
+  z-index: 4;
 }

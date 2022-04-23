@@ -107,8 +107,10 @@ export default function StoryCardIndex(props) {
                 <div className="drawer" style={{
                     left: drawerToggle ? "0" : "-348px    "
                 }}>
+                    <a href="https://www.youtube.com/watch?v=XCKQgJ0Eqlg" target="_blank"><button className="music">Play Creepy Music</button></a>
                     <button className="controls" onClick={toggleDrawerView}>x</button>
                     <img className="drawerPic" src="https://i.imgur.com/zcaBRl6.png" />
+
 
                 </div>
                 <img className="board" src="https://i.imgur.com/bvCluet.png" />

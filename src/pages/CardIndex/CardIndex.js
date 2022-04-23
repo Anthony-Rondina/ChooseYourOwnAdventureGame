@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-
+import Navbar from "../../components/Navbar"
 export default function CardIndex({ setEditCard }) {
     const [cards, setCards] = useState([])
 
@@ -21,8 +21,8 @@ export default function CardIndex({ setEditCard }) {
 
     return (
         <>
+            <Navbar />
             <Link to="/create"><button>Make a New Card</button></Link>
-            <a href="/"><button>Go to Game!</button></a>
             <div className="indexPage">
 
                 {cards.map((card, idx) => {

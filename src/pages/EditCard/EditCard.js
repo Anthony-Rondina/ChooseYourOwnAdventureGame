@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import axios from "axios"
+import Navbar from "../../components/Navbar"
 import { useNavigate } from "react-router-dom";
 export default function EditCard({ editCard }) {
     const navigate = useNavigate();
@@ -68,65 +69,68 @@ export default function EditCard({ editCard }) {
     }
 
     return (
-        <div className="newCardOuterWrapper">
-            <div className="createNewCard">
-                <h1>Create New Card</h1>
-                <a href="/cards"><button>Back to index</button></a>
-                <button onClick={() => { handleDelete(editCard._id) }}>Delete Card</button>
+        <>
+            <Navbar />
+            <div className="newCardOuterWrapper">
+                <div className="createNewCard">
+                    <h1>Create New Card</h1>
+                    <a href="/cards"><button>Back to index</button></a>
+                    <button onClick={() => { handleDelete(editCard._id) }}>Delete Card</button>
 
-                <form onSubmit={(evt) => { handleSubmit(evt) }}>
-                    <p>Does the card have a picture?</p>
-                    <input defaultValue={editCard.img} placeholder='Enter image link' type="text" ref={img} />
-                    <p>What is the Chapter Name?</p>
-                    <input defaultValue={editCard.chapter} placeholder='Enter chapter name' type="text" ref={chapter} />
-                    <p>What is the Card's number?</p>
-                    <input defaultValue={editCard.cardNumber} placeholder='Enter card number' type="number" ref={cardNumber} />
-                    {/* <p>What is their first choice?</p>
+                    <form onSubmit={(evt) => { handleSubmit(evt) }}>
+                        <p>Does the card have a picture?</p>
+                        <input defaultValue={editCard.img} placeholder='Enter image link' type="text" ref={img} />
+                        <p>What is the Chapter Name?</p>
+                        <input defaultValue={editCard.chapter} placeholder='Enter chapter name' type="text" ref={chapter} />
+                        <p>What is the Card's number?</p>
+                        <input defaultValue={editCard.cardNumber} placeholder='Enter card number' type="number" ref={cardNumber} />
+                        {/* <p>What is their first choice?</p>
                     <input defaultValue={editCard.choice1} placeholder='Enter choice 1' type="text" ref={choice1} /> */}
-                    {/* <p>What is their second choice?</p>
+                        {/* <p>What is their second choice?</p>
                     <input defaultValue={editCard.choice2} placeholder='Enter choice 2' type="text" ref={choice2} /> */}
-                    {/* <p>What is the previous card?</p>
+                        {/* <p>What is the previous card?</p>
                     <input defaultValue={editCard.previousCard} placeholder='Enter previous card' type="text" ref={previousCard} /> */}
-                    <p>Does the card have a clue attached?</p>
-                    <input className="largeCheckBox" placeholder='Enter has clue?' type="checkbox" ref={hasClue} />
-                    {/* <p>Link first clue object</p>
+                        <p>Does the card have a clue attached?</p>
+                        <input className="largeCheckBox" placeholder='Enter has clue?' type="checkbox" ref={hasClue} />
+                        {/* <p>Link first clue object</p>
                     <input defaultValue={editCard.clue1} placeholder='Enter clue 1' type="text" ref={clue1} />
                     <p>Link second clue object</p>
                     <input defaultValue={editCard.clue2} placeholder='Enter clue 2' type="text" ref={clue2} /> */}
-                    <p>Does this card have a challenge?</p>
-                    <input className="largeCheckBox" placeholder='Enter challenge?' type="checkbox" ref={hasChallenge} />
-                    <p>Enter the challenge's Title</p>
-                    <input defaultValue={editCard.challengeTitle} placeholder='Enter challenge Title' type="text" ref={challengeTitle} />
-                    <p>Enter the challenge's image</p>
-                    <input defaultValue={editCard.challengeImg} placeholder='Enter challenge image' type="text" ref={challengeImg} />
-                    <p>Enter the challenge's description</p>
-                    <input defaultValue={editCard.challengeDescription} placeholder='Enter challenge description' type="text" ref={challengeDescription} />
-                    <p>What type(s)of challeng is it?</p>
-                    <input defaultValue={editCard.challengeType} placeholder='Enter challenge type(s)' type="text" ref={challengeType} />
-                    <p>Enter card type</p>
-                    {/* make drop down choice here */}
-                    <input defaultValue={editCard.cardType} placeholder='Enter enter card type' type="text" ref={cardType} />
-                    <p>Does this card kill the player?</p>
-                    <input className="largeCheckBox" placeholder='Enter death' type="checkbox" ref={death} />
-                    <p>Enter choice 1 prompt</p>
-                    <input defaultValue={editCard.choice1TransitionScentence} placeholder='Enter choice 1 scenetence' type="text" ref={choice1TransitionScentence} />
-                    <p>Enter choice 2 prompt</p>
-                    <input defaultValue={editCard.choice2TransitionScentence} placeholder='Enter choice 2 scentence' type="text" ref={choice2TransitionScentence} />
-                    <p>Enter choice 3 prompt</p>
-                    <input defaultValue={editCard.choice3TransitionScentence} placeholder='Enter choice 3 scenetence' type="text" ref={choice3TransitionScentence} />
-                    <p>Enter choice 4 prompt</p>
-                    <input defaultValue={editCard.choice4TransitionScentence} placeholder='Enter choice 4 scentence' type="text" ref={choice4TransitionScentence} />
-                    <p>Enter return prompt</p>
-                    <input defaultValue={editCard.returnTransitionScentence} placeholder='Enter return scentence' type="text" ref={returnTransitionScentence} />
-                    <p>Enter</p>
-                    <input defaultValue={editCard.sound} placeholder='Enter sound link' type="text" ref={sound} />
-                    <p>Write what the card says</p>
-                    <textarea defaultValue={editCard.description} placeholder='Enter description' type="text" ref={description} />
-                    <p>Enter chapter number</p>
-                    <input defaultValue={editCard.chapterNumber} placeholder='Enter chapter number' type="number" ref={chapterNumber} />
-                    <input type="submit" value="Update the Card" />
-                </form>
+                        <p>Does this card have a challenge?</p>
+                        <input className="largeCheckBox" placeholder='Enter challenge?' type="checkbox" ref={hasChallenge} />
+                        <p>Enter the challenge's Title</p>
+                        <input defaultValue={editCard.challengeTitle} placeholder='Enter challenge Title' type="text" ref={challengeTitle} />
+                        <p>Enter the challenge's image</p>
+                        <input defaultValue={editCard.challengeImg} placeholder='Enter challenge image' type="text" ref={challengeImg} />
+                        <p>Enter the challenge's description</p>
+                        <input defaultValue={editCard.challengeDescription} placeholder='Enter challenge description' type="text" ref={challengeDescription} />
+                        <p>What type(s)of challeng is it?</p>
+                        <input defaultValue={editCard.challengeType} placeholder='Enter challenge type(s)' type="text" ref={challengeType} />
+                        <p>Enter card type</p>
+                        {/* make drop down choice here */}
+                        <input defaultValue={editCard.cardType} placeholder='Enter enter card type' type="text" ref={cardType} />
+                        <p>Does this card kill the player?</p>
+                        <input className="largeCheckBox" placeholder='Enter death' type="checkbox" ref={death} />
+                        <p>Enter choice 1 prompt</p>
+                        <input defaultValue={editCard.choice1TransitionScentence} placeholder='Enter choice 1 scenetence' type="text" ref={choice1TransitionScentence} />
+                        <p>Enter choice 2 prompt</p>
+                        <input defaultValue={editCard.choice2TransitionScentence} placeholder='Enter choice 2 scentence' type="text" ref={choice2TransitionScentence} />
+                        <p>Enter choice 3 prompt</p>
+                        <input defaultValue={editCard.choice3TransitionScentence} placeholder='Enter choice 3 scenetence' type="text" ref={choice3TransitionScentence} />
+                        <p>Enter choice 4 prompt</p>
+                        <input defaultValue={editCard.choice4TransitionScentence} placeholder='Enter choice 4 scentence' type="text" ref={choice4TransitionScentence} />
+                        <p>Enter return prompt</p>
+                        <input defaultValue={editCard.returnTransitionScentence} placeholder='Enter return scentence' type="text" ref={returnTransitionScentence} />
+                        <p>Enter</p>
+                        <input defaultValue={editCard.sound} placeholder='Enter sound link' type="text" ref={sound} />
+                        <p>Write what the card says</p>
+                        <textarea defaultValue={editCard.description} placeholder='Enter description' type="text" ref={description} />
+                        <p>Enter chapter number</p>
+                        <input defaultValue={editCard.chapterNumber} placeholder='Enter chapter number' type="number" ref={chapterNumber} />
+                        <input type="submit" value="Update the Card" />
+                    </form>
+                </div>
             </div>
-        </div>
+        </>
     )
 }

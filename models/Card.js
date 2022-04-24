@@ -12,6 +12,8 @@ const cardSchema = new Schema({
     choice4: { type: mongoose.Schema.Types.ObjectId, ref: 'Card' },
     previousCard: { type: mongoose.Schema.Types.ObjectId, ref: 'Card' },
     previousCard2: { type: mongoose.Schema.Types.ObjectId, ref: 'Card' },
+    previousCard3: { type: mongoose.Schema.Types.ObjectId, ref: 'Card' },
+    previousCard4: { type: mongoose.Schema.Types.ObjectId, ref: 'Card' },
     hasClue: Boolean,
     clue1: { type: mongoose.Schema.Types.ObjectId, ref: 'Clue' },
     clue2: { type: mongoose.Schema.Types.ObjectId, ref: 'Clue' },

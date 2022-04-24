@@ -107,17 +107,17 @@ export default function StoryCardIndex(props) {
                     <div className="drawerContents">
                         <div className="counterWrapperRed">
                             <div className="counterButtons">
-                                <button onClick={decreaseRed}>&lt;</button>
+                                <button onClick={decreaseRed}>-</button>
                                 <span className="readout">Psychic Meter</span>
-                                <button onClick={increaseRed}>&gt;</button>
+                                <button onClick={increaseRed}>+</button>
                             </div>
                             <button className="reset" onClick={resetRed}>Reset</button>
                         </div>
                         <div className="counterWrapperYellow">
                             <div className="counterButtons">
-                                <button onClick={decreaseYellow}>&lt;</button>
+                                <button onClick={decreaseYellow}>-</button>
                                 <span className="readout">Danger Meter</span>
-                                <button onClick={increaseYellow}>&gt;</button>
+                                <button onClick={increaseYellow}>+</button>
                             </div>
                             <button className="reset" onClick={resetYellow}>Reset</button>
                         </div>
@@ -141,7 +141,7 @@ export default function StoryCardIndex(props) {
                     <h2>{`Card #${cards.cardNumber}`}</h2>
                 </div>
 
-
+                <img className="cardImage" src={cards.img}></img>
                 <h2>{cards.description}</h2>
                 <button onClick={() => { getData(cards.previousCard) }}>{`Go back card`}</button>
                 {

@@ -75,7 +75,7 @@ export default function EditCard({ editCard }) {
                 <div className="createNewCard">
                     <h1>Create New Card</h1>
                     <a href="/cards"><button>Back to index</button></a>
-                    <button onClick={() => { handleDelete(editCard._id) }}>Delete Card</button>
+
 
                     <form onSubmit={(evt) => { handleSubmit(evt) }}>
                         <p>Does the card have a picture?</p>
@@ -129,6 +129,7 @@ export default function EditCard({ editCard }) {
                         <input defaultValue={editCard.chapterNumber} placeholder='Enter chapter number' type="number" ref={chapterNumber} />
                         <input type="submit" value="Update the Card" />
                     </form>
+                    <button onClick={() => { handleDelete(editCard._id) }}>Delete Card</button>
                 </div>
             </div>
         </>

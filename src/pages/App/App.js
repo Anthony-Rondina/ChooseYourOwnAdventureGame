@@ -9,6 +9,7 @@ import EditCard from '../EditCard/EditCard';
 function App() {
   const [user, setUser] = useState(null)
   const [editCard, setEditCard] = useState({})
+  const [overFlowToggle, setOverFlowToggle] = useState(false)
   return (
     <div className="App">
       <Routes>

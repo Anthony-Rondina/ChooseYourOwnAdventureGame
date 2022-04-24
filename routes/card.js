@@ -77,7 +77,7 @@ router.delete("/:id", (req, res) => {
 //Show
 router.get('/:id', async (req, res) => {
 
-    const query = Card.findById(req.params.id).populate('choice1 choice2')
+    const query = Card.findById(req.params.id).populate('choice1 choice2 choice3 choice4 previousCard previousCard2')
     query.exec((err, foundCard) => {
         if (!err) {
             res.status(200).json({ message: "All Good!", foundCard })

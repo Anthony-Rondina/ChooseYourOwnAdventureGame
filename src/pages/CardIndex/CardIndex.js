@@ -39,10 +39,13 @@ export default function CardIndex({ setEditCard }) {
     return (
         <>
             <Navbar />
-            <Link to="/create"><button>Make a New Card</button></Link>
-            <Posts setEditCard={setEditCard} cards={currentCards} loading={loading} />
-            <Pagination postsPerPage={postsPerPage} totalPosts={cards.length} paginate={paginate} />
+            <div className='newCardButton'>
+                <Link to="/create"><button>Make a New Card</button></Link>
 
+
+                <Posts setEditCard={setEditCard} cards={currentCards} loading={loading} />
+                <Pagination postsPerPage={postsPerPage} totalPosts={cards.length} paginate={paginate} />
+            </div>
         </>
     )
 }

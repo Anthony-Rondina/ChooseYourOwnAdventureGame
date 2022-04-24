@@ -6,9 +6,11 @@ export default function MainPage(props) {
         <header>
             <div className="logo">CHOOSE YOUR OWN ADVENTURE</div>
             <div className="linkBar">
-                <a href="/"><button>Go to Game!</button></a>
-                <a href="/cards"><button>Go to card Index</button></a>
-                <a href="https://www.zmangames.com/en/products/choose-your-own-adventure-house-danger/" target="_blank"><button>Buy the Game!</button></a>
+                <a href="/"><p>Go to Game!</p></a>
+                <p>|</p>
+                <a href="/cards"><p>Go to card Index</p></a>
+                <p>|</p>
+                <a href="https://www.zmangames.com/en/products/choose-your-own-adventure-house-danger/" target="_blank"><p>Buy the Game!</p></a>
             </div>
 
         </header>

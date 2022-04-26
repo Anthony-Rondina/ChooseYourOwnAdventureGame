@@ -37,10 +37,6 @@ router.get('/', (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const { body } = req
-        body.hasClue = body.hasClue === "on" ? true : false;
-        body.hasChallenge = body.hasChallenge === "on" ? true : false;
-        body.death = body.death === "on" ? true : false;
-        body.challengeImg = "test"
         const createdCard = await Card.create(body)
         res.status(200).json({ message: "Item Created!", createdCard })
     } catch (error) {
@@ -51,9 +47,6 @@ router.post('/', async (req, res) => {
 //UPDATE
 router.put("/:id", (req, res) => {
     const { body } = req
-    body.hasClue = body.hasClue === "on" ? true : false;
-    body.hasChallenge = body.hasChallenge === "on" ? true : false;
-    body.death = body.death === "on" ? true : false;
     Card.findByIdAndUpdate(req.params.id, body, { new: true }, (err, updatedCard) => {
         if (!err) {
             res.status(200).json(updatedCard)
@@ -77,7 +70,7 @@ router.delete("/:id", (req, res) => {
 //Show
 router.get('/:id', async (req, res) => {
 
-    const query = Card.findById(req.params.id).populate('choice1 choice2 choice3 choice4 previousCard previousCard2 previousCard3 previousCard4 clue1 clue2')
+    const query = Card.findById(req.params.id).populate('choice1 choice2 choice3 choice4 previousCard previousCard2 previousCard3 previousCard4 clue1 clue2 deathRoute deathRoute2 deathRoute3')
     query.exec((err, foundCard) => {
         if (!err) {
             res.status(200).json({ message: "All Good!", foundCard })

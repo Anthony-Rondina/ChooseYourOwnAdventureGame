@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Navbar from "../../components/Navbar"
-import { Posts } from '../../components/Posts'
+import { Clues } from '../../components/Clues'
 import { Pagination } from '../../components/Pagination'
-export default function CardIndex({ setEditCard }) {
+export default function ClueCardIndex({ setEditClue }) {
     const [cards, setCards] = useState([])
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -17,7 +17,7 @@ export default function CardIndex({ setEditCard }) {
             try {
 
                 setLoading(true)
-                const response = await axios.get(`http://localhost:3001/api/cards/`)
+                const response = await axios.get(`http://localhost:3001/api/clues/`)
                 setCards(response.data)
                 setLoading(false)
 
@@ -40,10 +40,10 @@ export default function CardIndex({ setEditCard }) {
         <>
             <Navbar />
             <div className='newCardButton'>
-                <Link to="/createCard"><button>Make a New Card</button></Link>
+                <Link to="/createClue"><button id='red'>Make a New Clue</button></Link>
 
 
-                <Posts setEditCard={setEditCard} cards={currentCards} loading={loading} />
+                <Clues setEditClue={setEditClue} clues={currentCards} loading={loading} />
                 <Pagination postsPerPage={postsPerPage} totalPosts={cards.length} paginate={paginate} />
             </div>
         </>

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import Navbar from "../../components/Navbar"
 export default function StoryCardIndex(props) {
     const [cards, setCards] = useState({})
+    const [clues, setClues] = useState({})
     const [toggle, setToggle] = useState(false)
     const [cardToggle, setCardToggle] = useState(false)
     const [clueToggle, setClueToggle] = useState(false)
@@ -14,7 +15,7 @@ export default function StoryCardIndex(props) {
     const getData = (input) => {
         (async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/api/cards/${input}`)
+                const response = await axios.get(`http://localhost:3001/api/cards/${input}`)
                 // console.log(response)
                 setCards(response.data.foundCard)
                 // console.log(cards)
@@ -30,10 +31,27 @@ export default function StoryCardIndex(props) {
         })()
     }
 
-    const previousCardValue = (input) => {
-
-        return `Go back to Card ${input}`
-
+    const openPopClue = (input) => {
+        getClueData(input)
+        toggleClueView()
+    }
+    const getClueData = (input) => {
+        (async () => {
+            try {
+                const response = await axios.get(`http://localhost:3001/api/clues/${input}`)
+                // console.log(response)
+                setClues(response.data.foundClue)
+                // console.log(cards)
+                if (response.status === 200) {
+                    setToggle(!toggle)
+                } else {
+                    console.log('Something went wrong')
+                }
+            } catch (err) {
+                console.log(err)
+                // console.log(`cards is ${cards}`)
+            }
+        })()
     }
     const toggleVisionView = () => {
         setVisionToggle(!visionToggle)
@@ -83,7 +101,7 @@ export default function StoryCardIndex(props) {
     useEffect(() => {
         (async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/api/cards/6260bb10959680ed4d55cb28`)
+                const response = await axios.get(`http://localhost:3001/api/cards/6260bb10959680ed4d55cb28`)
                 setCards(response.data.foundCard)
                 // console.log(response.data.foundCard)
                 // console.log(cards)
@@ -109,7 +127,7 @@ export default function StoryCardIndex(props) {
             {console.log("the previous card is ", cards.previousCard)}
             {console.log("choice 1 is ", cards.choice1)}
 
-            <img className="vision" onClick={toggleVisionView} src="https://i.imgur.com/feHfHsV.png" alt="vision" style={{ opacity: visionToggle ? "100" : "0", top: visionToggle ? "150px" : "-400px" }}></img>
+            <img className="vision" onClick={toggleVisionView} src="https://i.imgur.com/feHfHsV.png" alt="vision" style={{ opacity: visionToggle ? "100" : "0", }}></img>
             <div className="gameBoard">
                 <div className="drawer" style={{
                     left: drawerToggle ? "0" : "-348px"
@@ -156,6 +174,7 @@ export default function StoryCardIndex(props) {
                 <hr className="style-seven" />
                 <div className="optionDiv">
                     <p className="choiceOrReturn">Choice</p>
+                    <p className="cardOption" onClick={() => { getData(cards.choice1._id) }}>{cards.choice1TransitionScentence}</p>
                     {
                         cards.choice2TransitionScentence ? <p className="cardOption" onClick={() => { getData(cards.choice2._id) }}>{cards.choice2TransitionScentence}</p> : ""
                     }
@@ -165,32 +184,50 @@ export default function StoryCardIndex(props) {
                     {
                         cards.choice4TransitionScentence ? <p className="cardOption" onClick={() => { getData(cards.choice4._id) }}>{cards.choice4TransitionScentence}</p> : ""
                     }
-                    <p className="cardOption" onClick={() => { getData(cards.choice1._id) }}>{cards.choice1TransitionScentence}</p>
+
                 </div>
                 <hr className="style-seven" />
-                <div className="optionDiv">
+                {cards.death ? <div className="optionDiv">
+                    {console.log(`death is ${cards.death}`)}
                     <p className="choiceOrReturn">Return</p>
-                    <p className="cardOption" onClick={() => { getData(cards.previousCard._id) }}>{`Go back to Card `}</p>
+                    <p className="cardOption" onClick={() => { getData(cards.deathRoute._id) }}>{`Go back to Card `}</p>
                     {/* ${cards.previousCard.cardNumber} */}
 
                     {/* Load previous cards if there are any */}
                     {
-                        cards.previousCard2 ? <p className="cardOption" onClick={() => { getData(cards.previousCard2._id) }}>{`Go back to Card `}</p> : ""
+                        cards.deathRoute2 ? <p className="cardOption" onClick={() => { getData(cards.deathRoute2._id) }}>{`this shouldnt show `}</p> : ""
                     }
                     {
-                        cards.previousCard3 ? <p className="cardOption" onClick={() => { getData(cards.previousCard3._id) }}>{`Go back to Card `}</p> : ""
-                    }
-                    {
-                        cards.previousCard4 ? <p className="cardOption" onClick={() => { getData(cards.previousCard4._id) }}>{`Go back to Card `}</p> : ""
+                        cards.deathRoute3 ? <p className="cardOption" onClick={() => { getData(cards.deathRoute3._id) }}>{`this shouldnt show `}</p> : ""
                     }
 
-                </div>
+                </div> : ""}
+                {cards.hasClue ? <div className="optionDiv">
+                    <p className="choiceOrReturn">Clue</p>
+                    {/* ${cards.previousCard.cardNumber} */}
+
+                    {/* Load previous cards if there are any */}
+                    {
+                        cards.clue1 ? <p className="cardOption" onClick={() => { openPopClue(cards.clue1._id) }}>{cards.cluePrompt1}</p> : ""
+                    }
+                    {
+                        cards.clue2 ? <p className="cardOption" onClick={() => { openPopClue(cards.clue2._id) }}>{cards.cluePrompt2}</p> : ""
+                    }
+
+                </div> : ""}
+
+                <hr className="style-seven" />
             </div>
             <div className="clueBox" style={{ opacity: clueToggle ? "100" : "0", right: clueToggle ? "0" : "-500px    " }}>
-                <button className="clueClose closeWindow" onClick={toggleClueView}>x</button>
-                <h1>clue</h1>
-
+                <div className="chapNumBox">
+                    <button className="clueClose closeWindow" onClick={toggleClueView}>x</button>
+                    <p>{clues.chapter}</p>
+                    <h1>clue</h1>
+                </div>
+                <img src={clues.img} />
+                <p>{clues.description}</p>
             </div>
-        </main>
+
+        </main >
     )
 }

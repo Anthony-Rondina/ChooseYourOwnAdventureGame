@@ -5,6 +5,7 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cardController = require("./routes/card")
+const clueController = require("./routes/clue")
 require('dotenv').config();
 require('./config/database');
 const cors = require('cors')
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 // Check if token and create req.user
 app.use(require('./config/checkToken'));
 app.use("/api/cards", cardController)
+app.use("/api/clues", clueController)
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
 

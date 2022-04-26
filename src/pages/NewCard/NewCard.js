@@ -29,8 +29,9 @@ export default function NewCard(props) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
+            console.log(`test`)
             const response = await axios.post("http://localhost:3001/api/cards/", {
-                img: img.current.value, chapter: chapter.current.value, cardNumber: cardNumber.current.value, hasClue: hasClue.current.value, hasChallenge: hasChallenge.current.value, challengeTitle: challengeTitle.current.value, challengeImg: challengeImg.current.value, challengeDescription: challengeDescription.current.value, challengeType: challengeType.current.value, cardType: cardType.current.value, death: death.current.value, choice1TransitionScentence: choice1TransitionScentence.current.value, choice2TransitionScentence: choice2TransitionScentence.current.value, choice3TransitionScentence: choice3TransitionScentence.current.value, choice4TransitionScentence: choice4TransitionScentence.current.value, returnTransitionScentence: returnTransitionScentence.current.value, sound: sound.current.value, description: description.current.value, chapterNumber: chapterNumber.current.value,
+                img: img.current.value, chapter: chapter.current.value, cardNumber: cardNumber.current.value, hasClue: hasClue.current.checked, hasChallenge: hasChallenge.current.checked, challengeTitle: challengeTitle.current.value, challengeImg: challengeImg.current.value, challengeDescription: challengeDescription.current.value, challengeType: challengeType.current.value, cardType: cardType.current.value, death: death.current.checked, choice1TransitionScentence: choice1TransitionScentence.current.value, choice2TransitionScentence: choice2TransitionScentence.current.value, choice3TransitionScentence: choice3TransitionScentence.current.value, choice4TransitionScentence: choice4TransitionScentence.current.value, returnTransitionScentence: returnTransitionScentence.current.value, sound: sound.current.value, description: description.current.value, chapterNumber: chapterNumber.current.value,
             })
             navigate("/cards")
         } catch (err) {

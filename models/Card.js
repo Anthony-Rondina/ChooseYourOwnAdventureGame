@@ -34,6 +34,8 @@ const cardSchema = new Schema({
     choice3TransitionScentence: String,
     choice4TransitionScentence: String,
     returnTransitionScentence: String,
+    returnTransitionScentence2: String,
+    returnTransitionScentence3: String,
     sound: String,
     description: String,
     chapterNumber: Number,

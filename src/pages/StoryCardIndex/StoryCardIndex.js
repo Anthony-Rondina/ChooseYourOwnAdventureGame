@@ -190,23 +190,21 @@ export default function StoryCardIndex(props) {
                 {cards.death ? <div className="optionDiv">
                     {console.log(`death is ${cards.death}`)}
                     <p className="choiceOrReturn">Return</p>
-                    <p className="cardOption" onClick={() => { getData(cards.deathRoute._id) }}>{`Go back to Card `}</p>
+                    <p className="cardOption" onClick={() => { getData(cards.deathRoute._id) }}>{cards.returnTransitionScentence}</p>
                     {/* ${cards.previousCard.cardNumber} */}
 
                     {/* Load previous cards if there are any */}
                     {
-                        cards.deathRoute2 ? <p className="cardOption" onClick={() => { getData(cards.deathRoute2._id) }}>{`this shouldnt show `}</p> : ""
+                        cards.deathRoute2 ? <p className="cardOption" onClick={() => { getData(cards.deathRoute2._id) }}>{cards.returnTransitionScentence2}</p> : ""
                     }
+
                     {
-                        cards.deathRoute3 ? <p className="cardOption" onClick={() => { getData(cards.deathRoute3._id) }}>{`this shouldnt show `}</p> : ""
+                        cards.deathRoute3 ? <p className="cardOption" onClick={() => { getData(cards.deathRoute3._id) }}>{cards.returnTransitionScentence3}</p> : ""
                     }
 
                 </div> : ""}
                 {cards.hasClue ? <div className="optionDiv">
                     <p className="choiceOrReturn">Clue</p>
-                    {/* ${cards.previousCard.cardNumber} */}
-
-                    {/* Load previous cards if there are any */}
                     {
                         cards.clue1 ? <p className="cardOption" onClick={() => { openPopClue(cards.clue1._id) }}>{cards.cluePrompt1}</p> : ""
                     }
@@ -221,11 +219,14 @@ export default function StoryCardIndex(props) {
             <div className="clueBox" style={{ opacity: clueToggle ? "100" : "0", right: clueToggle ? "0" : "-500px    " }}>
                 <div className="chapNumBox">
                     <button className="clueClose closeWindow" onClick={toggleClueView}>x</button>
-                    <p>{clues.chapter}</p>
-                    <h1>clue</h1>
+                    <h2>{clues.chapter}</h2>
+                    <h2>{`Clue: #${clues.cardNumber}`}</h2>
                 </div>
                 <img src={clues.img} />
-                <p>{clues.description}</p>
+                <h2>{clues.description}</h2>
+                <h2 id="clickable" onClick={() => { getData(clues.choice1._id) }}>{clues.cardPrompt1}</h2>
+                <h2 id="clickable" onClick={() => { getClueData(clues.clue1._id) }}>{clues.cluePrompt1}</h2>
+                <h2 id="clickable" onClick={() => { getClueData(clues.clue2._id) }}>{clues.cluePrompt2}</h2>
             </div>
 
         </main >

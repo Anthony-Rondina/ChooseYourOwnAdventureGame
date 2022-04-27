@@ -78,9 +78,9 @@ export default function EditClue({ editCard }) {
                         <p>What is the Card's number?</p>
                         <input defaultValue={editCard.cardNumber} placeholder='Enter card number' type="number" ref={cardNumber} />
                         <p>Does the card have a clue attached?</p>
-                        <input className="largeCheckBox" placeholder='Enter has clue?' type="checkbox" ref={hasClue} />
+                        {editCard.hasClue ? <input className="largeCheckBox" placeholder='Enter death' type="checkbox" ref={hasClue} defaultChecked /> : <input className="largeCheckBox" placeholder='Enter death' type="checkbox" ref={hasClue} />}
                         <p>Does this card have a challenge?</p>
-                        <input className="largeCheckBox" placeholder='Enter challenge?' type="checkbox" ref={hasChallenge} />
+                        {editCard.hasChallenge ? <input className="largeCheckBox" placeholder='Enter death' type="checkbox" ref={hasChallenge} defaultChecked /> : <input className="largeCheckBox" placeholder='Enter death' type="checkbox" ref={hasChallenge} />}
                         <p>Enter the challenge's Title</p>
                         <input defaultValue={editCard.challengeTitle} placeholder='Enter challenge Title' type="text" ref={challengeTitle} />
                         <p>Enter the challenge's image</p>

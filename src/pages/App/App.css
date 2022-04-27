@@ -324,6 +324,7 @@ textarea {
   background-color: #e2cfab;
   right: 0;
   display: flex;
+  color: black;
   flex-direction: column;
   margin-top: 100px;
   padding: 30px;
@@ -704,4 +705,9 @@ footer {
 
 #red {
   background-color: red;
+}
+
+#clickable {
+  cursor: pointer;
+  color: green !important;
 }

@@ -9,6 +9,7 @@ import CardIndex from '../CardIndex/CardIndex';
 import ClueCardIndex from '../CardIndex/ClueCardIndex';
 import EditCard from '../EditCard/EditCard';
 import EditClue from '../EditCard/EditClue';
+import Footer from '../../components/Footer';
 function App() {
   const [user, setUser] = useState(null)
   const [editCard, setEditCard] = useState({})
@@ -24,9 +25,7 @@ function App() {
         <Route path="/cards/:number" element={<EditCard editCard={editCard} />}></Route>
         <Route path="/clues/:number" element={<EditClue editClue={editClue} />}></Route>
       </Routes>
-      <footer>
-
-      </footer>
+      <Footer />
     </div>
   );
 }

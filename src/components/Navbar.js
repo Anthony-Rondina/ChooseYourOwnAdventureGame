@@ -6,7 +6,7 @@ export default function MainPage(props) {
         <header>
             <div className="logo">CHOOSE YOUR OWN ADVENTURE</div>
             <div className="linkBar">
-                <a href="/"><p>Go to Game!</p></a>
+                <a href="/"><p>Play The Game!</p></a>
                 <p>|</p>
                 <a href="/cards"><p>Go to card Index</p></a>
                 <p>|</p>

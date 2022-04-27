@@ -29,7 +29,7 @@ a {
   display: flex;
   justify-content: space-around;
   /* border: solid white; */
-  width: 500px;
+  width: 800px;
 }
 
 body {
@@ -433,6 +433,7 @@ header {
   justify-content: center;
   align-items: center;
   z-index: 7;
+  border-bottom: solid 5px gray;
 }
 
 .yellowIcon {
@@ -698,8 +699,10 @@ hr {
 }
 
 footer {
+
   width: 100%;
   height: 15%;
+  color: white;
   background-color: black;
 }
 
@@ -710,4 +713,24 @@ footer {
 #clickable {
   cursor: pointer;
   color: green !important;
+}
+
+.rowDiv {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-around;
+  position: relative;
+  width: 100% !important;
+  min-width: 1000px;
+  border-top: solid 5px gray;
+}
+
+li {
+  list-style-type: none;
+
+  cursor: pointer;
+}
+
+li:hover {
+  color: orange;
 }

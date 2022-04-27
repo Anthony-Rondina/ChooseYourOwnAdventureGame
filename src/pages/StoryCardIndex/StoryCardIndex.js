@@ -101,7 +101,7 @@ export default function StoryCardIndex(props) {
     useEffect(() => {
         (async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/api/cards/6260bb10959680ed4d55cb28`)
+                const response = await axios.get(`http://localhost:3001/api/cards/6262b5c5f1c9ad371713b269`)
                 setCards(response.data.foundCard)
                 // console.log(response.data.foundCard)
                 // console.log(cards)

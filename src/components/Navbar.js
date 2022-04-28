@@ -20,7 +20,7 @@ export default function Navbar({ user, setUser, setShowLogin, showLogin }) {
             </div>
             <div className="linkBar">
                 <p>|</p>
-                <a href="/clues"><p>Feedback!</p></a>
+                <a href="/feedback"><p>Feedback</p></a>
                 <p>|</p>
                 <a href="https://www.zmangames.com/en/products/choose-your-own-adventure-house-danger/" target="_blank"><p>Buy the Game!</p></a>
                 <p>|</p>
@@ -30,7 +30,7 @@ export default function Navbar({ user, setUser, setShowLogin, showLogin }) {
                         <p>|</p>
                         <a href="/clues"><p>Go to Clue Index</p></a>
                         <p>|</p>
-                        <a href="/"><p>Test The Game!</p></a>
+                        <a href="/"><p>Test Your Game!</p></a>
                         <p>|</p>
                     </>
                     :

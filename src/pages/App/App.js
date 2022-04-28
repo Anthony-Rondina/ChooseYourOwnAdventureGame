@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
-import StoryCardIndex from '../StoryCardIndex/StoryCardIndex';
+import GameBoard from '../GameBoard/GameBoard';
 import NewCard from '../NewCard/NewCard';
 import NewClue from '../NewCard/NewClue';
 import { Route, Routes } from 'react-router-dom'
@@ -12,8 +12,9 @@ import EditCard from '../EditCard/EditCard';
 import EditClue from '../EditCard/EditClue';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import Feedback from '../Feedback/Feedback';
 function App() {
-  const [user, setUser] = useState()
+  const [user, setUser] = useState(getUser())
   const [editCard, setEditCard] = useState({})
   const [editClue, setEditClue] = useState({})
   const [showLogin, setShowLogin] = useState(true);
@@ -35,8 +36,9 @@ function App() {
       <Navbar showLogin={showLogin} setShowLogin={setShowLogin} setUser={setUser} user={user} />
       {user ?
         <Routes>
-          <Route path="/" element={<StoryCardIndex />}></Route>
+          <Route path="/" element={<GameBoard />}></Route>
           <Route path="/createCard" element={<NewCard />}></Route>
+          <Route path="/feedback" element={<Feedback />}></Route>
           <Route path="/createClue" element={<NewClue />}></Route>
           <Route path="/cards" element={<CardIndex setEditCard={setEditCard} />}></Route>
           <Route path="/clues" element={<ClueCardIndex setEditClue={setEditClue} />}></Route>

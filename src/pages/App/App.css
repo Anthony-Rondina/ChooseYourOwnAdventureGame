@@ -164,6 +164,7 @@ a.button {
   border: .1vmin solid var(--tan-2);
   border-radius: .5vmin;
   outline: none;
+  border-radius: 25px;
   cursor: pointer;
 }
 
@@ -366,7 +367,7 @@ textarea {
 main {
   background-image: url("https://i.imgur.com/Z5gkzPu.jpgs");
   /* border: solid black 15px; */
-  height: 76.1%;
+  height: 75%;
 }
 
 .signInBlock {
@@ -375,8 +376,6 @@ main {
   background-size: cover;
   /* display: flex; */
 }
-
-.form-wrapper {}
 
 .innerSignIn {
   height: 100%;
@@ -695,12 +694,20 @@ hr {
   font-family: 'Gloria Hallelujah', cursive;
   color: black;
   font-size: 2em;
+  white-space: pre-wrap;
 }
 
 .choiceOrReturn {
   font-family: 'Gloria Hallelujah', cursive;
   color: black;
   font-size: 2.5em;
+}
+
+.clue-description {
+  text-align: center;
+  color: black;
+  font-size: 1.5em;
+  white-space: pre-wrap;
 }
 
 .cardOption {
@@ -791,4 +798,8 @@ li:hover {
   padding: 1px;
   border-radius: 25px;
   cursor: pointer;
+}
+
+.feedback-wrapper {
+  height: 73.2%;
 }

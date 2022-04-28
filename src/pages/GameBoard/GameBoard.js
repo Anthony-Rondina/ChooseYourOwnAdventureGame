@@ -222,7 +222,7 @@ export default function StoryCardIndex() {
                     <h2>{`Clue: #${clues.cardNumber}`}</h2>
                 </div>
                 <img src={clues.img} />
-                <h2>{clues.description}</h2>
+                <p className="clue-description">{clues.description}</p>
                 <h2 id="clickable" onClick={() => { getData(clues.choice1._id) }}>{clues.cardPrompt1}</h2>
                 <h2 id="clickable" onClick={() => { getClueData(clues.clue1._id) }}>{clues.cluePrompt1}</h2>
                 <h2 id="clickable" onClick={() => { getClueData(clues.clue2._id) }}>{clues.cluePrompt2}</h2>

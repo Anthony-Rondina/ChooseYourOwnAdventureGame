@@ -100,9 +100,9 @@ code {
 }
 
 .form-container {
-  width: 60%;
+  width: 50%;
   padding: 3vmin;
-  background-color: var(--tan-1);
+  background-color: rgba(57, 8, 8, 0.3);
   border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
 }
@@ -307,7 +307,7 @@ textarea {
   background-color: #d5bd9a;
   border: solid rgb(255, 174, 24) 5px;
   right: 0;
-  margin-top: -430px;
+  margin-top: -40%;
   padding: 30px;
   border-radius: 15px;
   font-size: 12px;
@@ -335,7 +335,7 @@ textarea {
   display: flex;
   color: black;
   flex-direction: column;
-  margin-top: 200px;
+  margin-top: 10%;
   padding: 30px;
   border-radius: 15px;
   font-size: 12px;
@@ -359,11 +359,13 @@ textarea {
 main {
   background-image: url("https://i.imgur.com/Z5gkzPu.jpgs");
   /* border: solid black 15px; */
-  height: 77.1%;
+  height: 76.1%;
 }
 
 .signInBlock {
   height: 76.1%;
+  background-image: url(https://i.imgur.com/29mXZUA.png);
+  background-size: cover;
   /* display: flex; */
 }
 
@@ -737,6 +739,10 @@ footer {
   color: green !important;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 .rowDiv {
   display: flex !important;
   flex-direction: row !important;
@@ -777,4 +783,5 @@ li:hover {
   text-align: center;
   padding: 1px;
   border-radius: 25px;
+  cursor: pointer;
 }

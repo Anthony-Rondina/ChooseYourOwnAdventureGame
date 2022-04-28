@@ -7,12 +7,35 @@ const bcrypt = require('bcrypt');
 module.exports = {
   create,
   login,
-  checkToken
+  checkToken,
+  get,
+  put
 };
 
 function checkToken(req, res) {
   console.log('req.user', req.user);
   res.status(200).json(req.exp);
+}
+
+async function get(req, res) {
+  User.find({}, (err, foundUser) => {
+    if (!err) {
+      res.status(200).json(foundUser)
+    } else {
+      res.status(400).json(err)
+    }
+  })
+}
+async function put(req, res) {
+  const { body } = req
+
+  User.findByIdAndUpdate(req.params.id, body, { new: true }, (err, updatedUser) => {
+    if (!err) {
+      res.status(200).json(updatedUser)
+    } else {
+      res.status(400).json(err)
+    }
+  })
 }
 
 async function login(req, res) {

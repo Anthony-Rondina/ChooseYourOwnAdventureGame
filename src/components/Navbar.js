@@ -12,7 +12,7 @@ export default function Navbar({ user, setUser, setShowLogin, showLogin }) {
                 {user ?
                     <>
                         <span>{`Welcome ${user.name}!`}</span>
-                        <span className="btn-sm" onClick={handleLogOut}>LOG OUT</span>
+                        <span className="logoutButton" onClick={handleLogOut}>LOG OUT</span>
                     </>
                     :
                     <span className="logoutButton" onClick={() => setShowLogin(!showLogin)}>{showLogin ? 'SIGN UP' : 'LOG IN'}</span>}
@@ -20,16 +20,26 @@ export default function Navbar({ user, setUser, setShowLogin, showLogin }) {
             </div>
             <div className="linkBar">
                 <p>|</p>
-                <a href="/"><p>Play The Game!</p></a>
-                <p>|</p>
-                <a href="/cards"><p>Go to card Index</p></a>
-                <p>|</p>
-                <a href="/clues"><p>Go to Clue Index</p></a>
+                <a href="/clues"><p>Feedback!</p></a>
                 <p>|</p>
                 <a href="https://www.zmangames.com/en/products/choose-your-own-adventure-house-danger/" target="_blank"><p>Buy the Game!</p></a>
                 <p>|</p>
-                <a href="/clues"><p>Feedback!</p></a>
-                <p>|</p>
+                {user ? user.admin ?
+                    <>
+                        <a href="/cards"><p>Go to card Index</p></a>
+                        <p>|</p>
+                        <a href="/clues"><p>Go to Clue Index</p></a>
+                        <p>|</p>
+                        <a href="/"><p>Test The Game!</p></a>
+                        <p>|</p>
+                    </>
+                    :
+                    ''
+                    :
+                    ''}
+
+
+
             </div>
 
         </header>

@@ -18,8 +18,8 @@ export default function Footer(props) {
                 <div className="row4">
                     <div className="row4Links">
                         <ul>
-                            <li>Your Account</li>
-                            <li>Your Favorite Games</li>
+                            <li>Community Reports</li>
+                            <li>Staff Favorite Games</li>
                             <li>Friends and Social Groups</li>
                             <li>Check your inbox</li>
                             <li>Contact Us</li>

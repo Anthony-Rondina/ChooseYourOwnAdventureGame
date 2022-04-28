@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import { Link } from "react-router-dom"
 import Navbar from "../../components/Navbar"
-export default function StoryCardIndex(props) {
+export default function StoryCardIndex() {
     const [cards, setCards] = useState({})
     const [clues, setClues] = useState({})
     const [toggle, setToggle] = useState(false)
@@ -101,7 +101,7 @@ export default function StoryCardIndex(props) {
     useEffect(() => {
         (async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/api/cards/6262b5c5f1c9ad371713b269`)
+                const response = await axios.get(`http://localhost:3001/api/cards/6260bb10959680ed4d55cb28`)
                 setCards(response.data.foundCard)
                 // console.log(response.data.foundCard)
                 // console.log(cards)
@@ -120,7 +120,6 @@ export default function StoryCardIndex(props) {
 
     return (
         <main>
-            <Navbar />
             <button className="openControls" onClick={toggleDrawerView}>Controls</button>
 
             {/* this shows that the previousCard object is there, but I cant reference it */}

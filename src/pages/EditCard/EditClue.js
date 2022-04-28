@@ -48,7 +48,7 @@ export default function editClue({ editClue }) {
 
     return (
         <>
-            <Navbar />
+            {/* <Navbar /> */}
             <div className="newCardOuterWrapper">
                 <div className="createNewCard">
                     <h1>Edit This Clue</h1>

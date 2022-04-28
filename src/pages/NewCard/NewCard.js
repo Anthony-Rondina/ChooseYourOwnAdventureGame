@@ -41,7 +41,7 @@ export default function NewCard(props) {
 
     return (
         <>
-            <Navbar />
+            {/* <Navbar /> */}
             <div className="newCardOuterWrapper">
                 <div className="createNewCard">
                     <h1>Create New Card</h1>

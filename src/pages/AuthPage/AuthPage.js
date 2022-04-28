@@ -1,10 +1,16 @@
-import SignUpForm from "../../components/SignUpForm"
+import { useState } from 'react';
+import LoginForm from '../../components/LoginForm';
+import SignUpForm from '../../components/SignUpForm';
+import Navbar from '../../components/Navbar';
+export default function AuthPage({ setUser, showLogin }) {
 
-export default function AuthPage({ setUser }) {
     return (
-        <main>
-            <h1>AuthPage</h1>
-            {/* <SignUpForm setUser ={setUser}/> */}
-        </main>
-    )
+        <div className='signInBlock' >
+            {/* <Navbar /> */}
+            <div className='innerSignIn'>
+
+                {showLogin ? <LoginForm setUser={setUser} /> : <SignUpForm setUser={setUser} />}
+            </div>
+        </div>
+    );
 }

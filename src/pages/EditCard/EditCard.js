@@ -63,7 +63,7 @@ export default function EditClue({ editCard }) {
 
     return (
         <>
-            <Navbar />
+            {/* <Navbar /> */}
             <div className="newCardOuterWrapper">
                 <div className="createNewCard">
                     <h1>Edit This Card</h1>

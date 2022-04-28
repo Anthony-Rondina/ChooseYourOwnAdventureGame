@@ -24,16 +24,6 @@ export default class SignUpForm extends Component {
             const user = await signUp(formData)
             this.props.setUser(user)
             localStorage.setItem('token', user)
-            //OR DO THE FOLLOWING
-            // const formData = {
-            //     name: this.state.name,
-            //     emai: this.state.email,
-            //     password: this.state.password
-            //   };
-            //   // or
-            //   const {name, email, password} = this.state;
-            //   const formData = {name, email, password};
-            // alert(JSON.stringify(formData))
         } catch (err) {
             this.setState({ error: "Sign up failed" })
         }
@@ -44,7 +34,7 @@ export default class SignUpForm extends Component {
         //
         const disable = this.state.password !== this.state.confirm;
         return (
-            <div>
+            <div className='formWrapper'>
                 <div className="form-container">
                     <form autoComplete="off" onSubmit={this.handleSubmit}>
                         <label>Name</label>

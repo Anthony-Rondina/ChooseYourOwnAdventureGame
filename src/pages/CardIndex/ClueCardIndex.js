@@ -38,7 +38,7 @@ export default function ClueCardIndex({ setEditClue }) {
 
     return (
         <>
-            <Navbar />
+            {/* <Navbar /> */}
             <div className='newCardButton'>
                 <Link to="/createClue"><button id='red'>Make a New Clue</button></Link>
 

@@ -30,7 +30,7 @@ export default function NewClue(props) {
 
     return (
         <>
-            <Navbar />
+            {/* <Navbar /> */}
             <div className="newCardOuterWrapper">
                 <div className="createNewCard">
                     <h1>Create New Clue</h1>

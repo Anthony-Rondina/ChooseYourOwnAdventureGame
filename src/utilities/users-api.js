@@ -1,5 +1,5 @@
 // users-api.js
-
+import sendRequest from './send-request';
 
 
 // This is the base path of the Express route we'll define
@@ -24,10 +24,10 @@ export async function signUp(userData) {
   }
 }
 
-export async function checkToken(){
+export async function checkToken() {
 
 }
 
-export async function login(){
-
+export async function login(credentials) {
+  return sendRequest(`${BASE_URL}/login`, 'POST', credentials);
 }

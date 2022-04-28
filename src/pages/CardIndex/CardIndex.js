@@ -38,7 +38,7 @@ export default function CardIndex({ setEditCard }) {
 
     return (
         <>
-            <Navbar />
+            {/* <Navbar user={user} /> */}
             <div className='newCardButton'>
                 <Link to="/createCard"><button>Make a New Card</button></Link>
 

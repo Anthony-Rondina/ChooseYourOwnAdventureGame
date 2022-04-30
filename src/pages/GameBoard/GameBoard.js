@@ -16,7 +16,7 @@ export default function StoryCardIndex() {
     const getData = (input) => {
         (async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/api/cards/${input}`)
+                const response = await axios.get(`/api/cards/${input}`)
                 // console.log(response)
                 setCards(response.data.foundCard)
                 // console.log(cards)
@@ -39,7 +39,7 @@ export default function StoryCardIndex() {
     const getClueData = (input) => {
         (async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/api/clues/${input}`)
+                const response = await axios.get(`/api/clues/${input}`)
                 // console.log(response)
                 setClues(response.data.foundClue)
                 // console.log(cards)
@@ -102,7 +102,7 @@ export default function StoryCardIndex() {
     useEffect(() => {
         (async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/api/cards/6260bb10959680ed4d55cb28`)
+                const response = await axios.get(`/api/cards/6260bb10959680ed4d55cb28`)
                 setCards(response.data.foundCard)
                 // console.log(response.data.foundCard)
                 // console.log(cards)

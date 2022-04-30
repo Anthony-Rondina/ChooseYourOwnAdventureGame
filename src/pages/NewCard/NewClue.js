@@ -19,7 +19,7 @@ export default function NewClue(props) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.post("http://localhost:3001/api/clues/", {
+            const response = await axios.post("/api/clues/", {
                 img: img.current.value, chapter: chapter.current.value, cardNumber: cardNumber.current.value, cardType: cardType.current.value, description: description.current.value, cluePrompt1: cluePrompt1.current.value, cluePrompt2: cluePrompt2.current.value, hasClue: hasClue.current.checked, bonusValue: bonusValue.current.value, cardPrompt1: cardPrompt1.current.value, cardPrompt2: cardPrompt2.current.value
             })
             navigate("/clues")

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react"
 import axios from "axios"
 import Navbar from "../../components/Navbar"
 import { useNavigate } from "react-router-dom";
-export default function EditClue({ editCard }) {
+export default function EditCard({ editCard }) {
     const navigate = useNavigate();
     const [toggle, setToggle] = useState(false)
     const img = useRef()
@@ -50,7 +50,7 @@ export default function EditClue({ editCard }) {
     }
     const handleDelete = async (id) => {
         try {
-            const response = await axios.delete(`http://localhost:3001/api/cards/${id}`, {
+            const response = await axios.delete(`/api/cards/${id}`, {
             })
             if (response.status === 200) {
                 navigate(-1)

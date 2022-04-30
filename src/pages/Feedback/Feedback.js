@@ -8,7 +8,7 @@ export default function Feedback({ user }) {
     const title = useRef()
     let token = localStorage.getItem("token")
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         try {
             console.log("test")
             const response = await axios.post("/posts/626c90a233a348911aa6afe6/comments", {
@@ -90,7 +90,7 @@ export default function Feedback({ user }) {
                                     <p>{comment.content}</p>
                                 </div>
                                 <div className="comment-user">
-                                    <p>{`Posted by ${comment.user.name}`}</p>
+                                    <p>{`Posted by: ${comment.user.name}`}</p>
                                     {user.email === comment.user.email ?
                                         <button className="delete-button" onClick={() => { handleDelete(comment._id) }}>Delete Comment</button>
                                         : ''}

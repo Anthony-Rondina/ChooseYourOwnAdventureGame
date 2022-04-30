@@ -17,7 +17,7 @@ export default function ClueCardIndex({ setEditClue }) {
             try {
 
                 setLoading(true)
-                const response = await axios.get(`http://localhost:3001/api/clues/`)
+                const response = await axios.get(`/api/clues/`)
                 setCards(response.data)
                 setLoading(false)
 

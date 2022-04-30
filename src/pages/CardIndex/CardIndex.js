@@ -17,7 +17,7 @@ export default function CardIndex({ setEditCard }) {
             try {
 
                 setLoading(true)
-                const response = await axios.get(`http://localhost:3001/api/cards/`)
+                const response = await axios.get(`/api/cards/`)
                 setCards(response.data)
                 setLoading(false)
 

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react"
 import axios from "axios"
 import Navbar from "../../components/Navbar"
 import { useNavigate } from "react-router-dom";
-export default function editClue({ editClue }) {
+export default function EditClue({ editClue }) {
     const navigate = useNavigate();
     const img = useRef()
     const chapter = useRef()
@@ -24,7 +24,7 @@ export default function editClue({ editClue }) {
             // v NAVIGATE WORKS WHEN UNCOMMENTED v
             // navigate("/cards")
             // v CODE BREAKS HERE v
-            await axios.put(`http://localhost:3001/api/clues/${editClue._id}`, {
+            await axios.put(`/api/clues/${editClue._id}`, {
                 img: img.current.value, chapter: chapter.current.value, cardNumber: cardNumber.current.value, cardType: cardType.current.value, description: description.current.value, cluePrompt1: cluePrompt1.current.value, cluePrompt2: cluePrompt2.current.value, hasClue: hasClue.current.checked, bonusValue: bonusValue.current.value, cardPrompt1: cardPrompt1.current.value, cardPrompt2: cardPrompt2.current.value
             })
             console.log(`success!`)

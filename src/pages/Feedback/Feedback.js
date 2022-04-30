@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react"
 import axios from "axios"
+import { useNavigate } from "react-router-dom";
 export default function Feedback({ user }) {
+    const navigate = useNavigate();
     const [loading, setLoading] = useState(false)
     const [blogPost, setBlogPost] = useState(false)
     const [toggle, setToggle] = useState(false)
@@ -8,7 +10,7 @@ export default function Feedback({ user }) {
     const title = useRef()
     let token = localStorage.getItem("token")
     const handleSubmit = async (e) => {
-        // e.preventDefault()
+        e.preventDefault()
         try {
             console.log("test")
             const response = await axios.post("/posts/626c90a233a348911aa6afe6/comments", {
@@ -19,6 +21,7 @@ export default function Feedback({ user }) {
                 }
             })
             setToggle(!toggle)
+            navigate('/feedback')
             console.log(toggle)
         } catch (err) {
             console.log(err)
@@ -30,6 +33,7 @@ export default function Feedback({ user }) {
             // console.log(token)
             const response = await axios.delete(`/posts/626c90a233a348911aa6afe6/comments/${id}`)
             setToggle(!toggle)
+            navigate('/feedback')
         } catch (err) {
             console.log(err)
         }

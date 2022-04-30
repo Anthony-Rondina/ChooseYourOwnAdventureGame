@@ -39,7 +39,7 @@ export default function StoryCardIndex() {
         setTimeout(() => {
             roll = Math.floor(Math.random() * 6) + 1
             setDiceRoll(roll)
-        }, 1000);
+        }, 800);
     }
 
     const openPopClue = (input) => {

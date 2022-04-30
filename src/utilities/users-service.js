@@ -6,7 +6,7 @@ export async function signUp(userData) {
     const token = await usersAPI.signUp(userData)
     //return promise that userAPI will run
     localStorage.setItem('token', token)
-    return getUser()
+    return token
 }
 
 // Login
@@ -19,10 +19,7 @@ export async function login(credentials) {
 export async function getToken() {
     const token = localStorage.getItem('token');
     if (!token) return null;
-    console.log(token)
-    //payload runs the same command as getuser but doesnt break?
     const payload = JSON.parse(window.atob(token.split(".")[1]))
-    console.log(payload)
     if (payload.exp < Date.now() / 1000) {
         localStorage.removeItem('token')
         return null;
@@ -33,7 +30,7 @@ export async function getToken() {
 
 export async function getUser() {
     const token = await getToken();
-    console.log("token is ", token)
+    // console.log("token is ", token)
     //v CODE BREAKS HERE v
     return token ? JSON.parse(window.atob(token.split(".")[1])).user : null
 }

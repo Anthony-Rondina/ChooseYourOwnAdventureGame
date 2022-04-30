@@ -1,20 +1,35 @@
 import { useState, useEffect, useRef } from "react"
 import axios from "axios"
-export default function Feedback({ }) {
+export default function Feedback({ user }) {
     const [loading, setLoading] = useState(false)
     const [blogPost, setBlogPost] = useState(false)
     const [toggle, setToggle] = useState(false)
     const content = useRef()
     const title = useRef()
-
+    let token = localStorage.getItem("token")
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            console.log(`test`)
-            const response = await axios.post("http://localhost:3001/posts/626c90a233a348911aa6afe6/comments", {
-
+            console.log("test")
+            const response = await axios.post("/posts/626c90a233a348911aa6afe6/comments", {
+                title: title.current.value, content: content.current.value
+            }, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
             })
-            // navigate("/cards")
+            setToggle(!toggle)
+            console.log(toggle)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+    const handleDelete = async (id) => {
+        // e.preventDefault()
+        try {
+            // console.log(token)
+            const response = await axios.delete(`/posts/626c90a233a348911aa6afe6/comments/${id}`)
+            setToggle(!toggle)
         } catch (err) {
             console.log(err)
         }
@@ -25,17 +40,21 @@ export default function Feedback({ }) {
             try {
 
                 // setLoading(true)
-                const response = await axios.get(`http://localhost:3001/posts/626c90a233a348911aa6afe6`)
+                const response = await axios.get(`/posts/626c90a233a348911aa6afe6`)
                 setBlogPost(response.data.foundPost)
                 // setLoading(false)
 
             } catch (err) {
-                console.log(`err`)
+                console.log(err)
             }
         })()
     }, [toggle])
 
-
+    // if (loading) {
+    //     return (
+    //         <h2>Loading</h2>
+    //     )
+    // }
     return (
         <div className="blog-wrapper">
             <div className="blog-inner-wrapper">
@@ -60,9 +79,10 @@ export default function Feedback({ }) {
             </div>
             {blogPost.comments ?
                 <div className="commentBlock">
-                    {blogPost.comments.map((comment) => {
+                    {blogPost.comments.map((comment, idx) => {
+                        // console.log(comment._id)
                         return (
-                            <div className="comment">
+                            <div key={idx} className="comment">
                                 <div className="comment-title">
                                     <p>{comment.title}</p>
                                 </div>
@@ -71,6 +91,9 @@ export default function Feedback({ }) {
                                 </div>
                                 <div className="comment-user">
                                     <p>{`Posted by ${comment.user.name}`}</p>
+                                    {user.email === comment.user.email ?
+                                        <button className="delete-button" onClick={() => { handleDelete(comment._id) }}>Delete Comment</button>
+                                        : ''}
                                 </div>
                             </div>
                         )

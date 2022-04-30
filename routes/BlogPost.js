@@ -70,8 +70,9 @@ router.post('/:id/comments', check, async (req, res) => {
         //Make the comment from the form's body
         const comment = new Comment(body)
         //assign comment to user
+        // console.log(req.user)
         comment.user = req.user._id
-        console.log("comment is", comment)
+        // console.log("comment is", comment)
         //save comment to DB
         comment.save()
         //push comment to the blogPost
@@ -79,7 +80,7 @@ router.post('/:id/comments', check, async (req, res) => {
         //save Blogpost to DB
         blogPost.save()
         //test output
-        console.log(`Post is now ${blogPost}`)
+        // console.log(`Post is now ${blogPost}`)
         res.status(200).json({ message: "Worked!" })
     } catch (error) {
         res.status(400).json({ err: error.message })

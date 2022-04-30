@@ -37,7 +37,7 @@ function App() {
       {user ? user.admin ? //ADMIN users can access everything
         <Routes>
           <Route path="/" element={<GameBoard />}></Route>
-          <Route path="/feedback" element={<Feedback />}></Route>
+          <Route path="/feedback" element={<Feedback user={user} />}></Route>
           <Route path="/createCard" element={<NewCard />}></Route>
           <Route path="/createClue" element={<NewClue />}></Route>
           <Route path="/cards" element={<CardIndex setEditCard={setEditCard} />}></Route>
@@ -49,7 +49,7 @@ function App() {
         //normal users can only access gameboard and feedback
         <Routes>
           <Route path="/" element={<GameBoard />}></Route>
-          <Route path="/feedback" element={<Feedback />}></Route>
+          <Route path="/feedback" element={<Feedback user={user} />}></Route>
         </Routes>
         :
         //Non users can only access login page

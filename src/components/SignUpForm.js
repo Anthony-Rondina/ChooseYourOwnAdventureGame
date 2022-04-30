@@ -27,7 +27,7 @@ export default class SignUpForm extends Component {
         } catch (err) {
             this.setState({ error: "Sign up failed" })
         }
-        event.preventDefault();
+        // event.preventDefault();
         // alert(JSON.stringify(this.state));
     }
     render() {

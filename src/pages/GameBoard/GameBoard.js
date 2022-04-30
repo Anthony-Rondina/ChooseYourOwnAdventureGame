@@ -34,8 +34,12 @@ export default function StoryCardIndex() {
     }
 
     const rollDice = () => {
-        let roll = Math.floor(Math.random() * 6) + 1
+        let roll = "-"
         setDiceRoll(roll)
+        setTimeout(() => {
+            roll = Math.floor(Math.random() * 6) + 1
+            setDiceRoll(roll)
+        }, 1000);
     }
 
     const openPopClue = (input) => {

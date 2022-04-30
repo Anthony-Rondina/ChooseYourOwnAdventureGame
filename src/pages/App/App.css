@@ -817,19 +817,106 @@ li:hover {
 .blog-post {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  border: solid blue 10px;
-  width: 100vw;
-  height: 76%;
-  overflow: auto;
+  /* border: solid blue 10px; */
+  width: 75%;
+  height: 1000px;
+}
+
+.blog-title {
+  color: white;
+}
+
+.blog-content {
+  font-size: 2em;
+  text-align: center;
 }
 
 .commentBlock {
-  border: solid red 10px;
+  /* border: solid red 1px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .comment {
-  border: solid white 10px;
+  border: solid white 1px;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.comment-title {
+  border: solid white 1px;
   width: 100%;
   height: 100%;
+  text-align: center;
+  background-color: #414833;
+}
+
+.comment-user {
+  border: solid white 1px;
+  width: 100%;
+  height: 60px;
+  text-align: right;
+  padding: 10px;
+  background-color: #414833;
+}
+
+.comment-content {
+  border: solid white 1px;
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  background-color: #6b705c;
+}
+
+.blog-wrapper {
+  /* overflow-x: hidden; */
+  width: 100%;
+  background-color: #283618;
+}
+
+.blog-inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.form-wrapper {
+  display: flex;
+  border: 1px white solid;
+  width: 60%;
+  padding: 10px;
+}
+
+.form-outter-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* .submit-button {
+  display: flex;
+  border: solid 2px blue;
+  width: 100%;
+  margin-left: 180%;
+  justify-content: center;
+  align-items: center;
+} */
+
+.enter-comment {
+  width: 95%;
+}
+
+.enter-comment-content {
+  width: 95%;
 }

@@ -6,6 +6,7 @@ import { Cardbox } from "../../components/Cardbox"
 export default function StoryCardIndex() {
     const [cards, setCards] = useState({})
     const [clues, setClues] = useState({})
+    const [diceRoll, setDiceRoll] = useState(0)
     const [toggle, setToggle] = useState(false)
     const [cardToggle, setCardToggle] = useState(false)
     const [clueToggle, setClueToggle] = useState(false)
@@ -30,6 +31,11 @@ export default function StoryCardIndex() {
                 // console.log(`cards is ${cards}`)
             }
         })()
+    }
+
+    const rollDice = () => {
+        let roll = Math.floor(Math.random() * 6) + 1
+        setDiceRoll(roll)
     }
 
     const openPopClue = (input) => {
@@ -154,6 +160,12 @@ export default function StoryCardIndex() {
 
                     </div>
                     <img className="drawerPic" src="https://i.imgur.com/zcaBRl6.png" alt="alternative text" />
+                </div>
+                <img className="dice" onClick={rollDice} src="https://i.imgur.com/rTonML4.png" />
+                <div className="dice-roll-block">
+                    <div className="dice-roll-container">
+                        <span>{diceRoll}</span>
+                    </div>
                 </div>
                 <img className="board" onClick={toggleVisionView} src="https://i.imgur.com/bvCluet.png" alt="alternative text" />
                 <img onClick={toggleCardView} className="deck" src="https://i.imgur.com/wawdxow.png" alt="alternative text" />

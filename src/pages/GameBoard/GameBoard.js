@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import { Link } from "react-router-dom"
 import Navbar from "../../components/Navbar"
+import { Cardbox } from "../../components/Cardbox"
 export default function StoryCardIndex() {
     const [cards, setCards] = useState({})
     const [clues, setClues] = useState({})
@@ -215,7 +216,8 @@ export default function StoryCardIndex() {
 
                 <hr className="style-seven" />
             </div>
-            <div className="clueBox" style={{ opacity: clueToggle ? "100" : "0", right: clueToggle ? "0" : "-500px    " }}>
+            <Cardbox clueToggle={clueToggle} getData={getData} clues={clues} toggleClueView={toggleClueView} getClueData={getClueData} />
+            {/* <div className="clueBox" style={{ opacity: clueToggle ? "100" : "0", right: clueToggle ? "0" : "-500px    " }}>
                 <div className="chapNumBox">
                     <button className="clueClose closeWindow" onClick={toggleClueView}>x</button>
                     <h2>{clues.chapter}</h2>
@@ -226,7 +228,7 @@ export default function StoryCardIndex() {
                 <h2 id="clickable" onClick={() => { getData(clues.choice1._id) }}>{clues.cardPrompt1}</h2>
                 <h2 id="clickable" onClick={() => { getClueData(clues.clue1._id) }}>{clues.cluePrompt1}</h2>
                 <h2 id="clickable" onClick={() => { getClueData(clues.clue2._id) }}>{clues.cluePrompt2}</h2>
-            </div>
+            </div> */}
 
         </main >
     )

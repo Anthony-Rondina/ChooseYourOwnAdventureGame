@@ -24,7 +24,8 @@ const userSchema = new Schema({
     },
     admin: {
         type: Boolean
-    }
+    },
+    blogPosts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'blogPost' }]
 }, {
     timestamps: true,
     toJSON: {

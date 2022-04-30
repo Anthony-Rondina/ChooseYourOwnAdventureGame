@@ -594,7 +594,7 @@ header {
 }
 
 .music {
-  background-color: darkolivegreen;
+  background-color: black;
 }
 
 .counterWrapperRed {
@@ -802,4 +802,34 @@ li:hover {
 
 .feedback-wrapper {
   height: 73.2%;
+}
+
+.blog-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid red 1px;
+  width: 100vw;
+  height: 76%;
+  overflow: auto;
+}
+
+.blog-post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid blue 10px;
+  width: 100vw;
+  height: 76%;
+  overflow: auto;
+}
+
+.commentBlock {
+  border: solid red 10px;
+}
+
+.comment {
+  border: solid white 10px;
+  width: 100%;
+  height: 100%;
 }

@@ -34,11 +34,11 @@ function App() {
   return (
     <div className="App">
       <Navbar showLogin={showLogin} setShowLogin={setShowLogin} setUser={setUser} user={user} />
-      {user ?
+      {user ? user.admin ? //ADMIN users can access everything
         <Routes>
           <Route path="/" element={<GameBoard />}></Route>
-          <Route path="/createCard" element={<NewCard />}></Route>
           <Route path="/feedback" element={<Feedback />}></Route>
+          <Route path="/createCard" element={<NewCard />}></Route>
           <Route path="/createClue" element={<NewClue />}></Route>
           <Route path="/cards" element={<CardIndex setEditCard={setEditCard} />}></Route>
           <Route path="/clues" element={<ClueCardIndex setEditClue={setEditClue} />}></Route>
@@ -46,6 +46,13 @@ function App() {
           <Route path="/clues/:number" element={<EditClue editClue={editClue} />}></Route>
         </Routes>
         :
+        //normal users can only access gameboard and feedback
+        <Routes>
+          <Route path="/" element={<GameBoard />}></Route>
+          <Route path="/feedback" element={<Feedback />}></Route>
+        </Routes>
+        :
+        //Non users can only access login page
         <AuthPage showLogin={showLogin} setUser={setUser} />
       }
       <Footer />

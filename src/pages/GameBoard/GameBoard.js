@@ -137,7 +137,7 @@ export default function StoryCardIndex() {
             {console.log("the previous card is ", cards.previousCard)}
             {console.log("choice 1 is ", cards.choice1)}
 
-            <img className="vision" onClick={toggleVisionView} src="https://i.imgur.com/feHfHsV.png" alt="vision" style={{ opacity: visionToggle ? "100" : "0", }}></img>
+            <img className="vision" onClick={toggleVisionView} src="https://i.imgur.com/feHfHsV.png" alt="vision" style={{ opacity: visionToggle ? "100" : "0", zIndex: visionToggle ? 3 : 0 }}></img>
             <div className="gameBoard">
                 <div className="drawer" style={{
                     left: drawerToggle ? "0" : "-348px"

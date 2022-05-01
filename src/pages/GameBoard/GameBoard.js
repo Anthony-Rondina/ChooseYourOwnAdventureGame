@@ -26,6 +26,7 @@ export default function StoryCardIndex() {
                 } else {
                     console.log('Something went wrong')
                 }
+
             } catch (err) {
                 console.log(err)
                 // console.log(`cards is ${cards}`)

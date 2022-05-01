@@ -95,7 +95,7 @@ export default function Feedback({ user }) {
                                 </div>
                                 <div className="comment-user">
                                     <p>{`Posted by: ${comment.user.name}`}</p>
-                                    {user.email === comment.user.email ?
+                                    {user.email === comment.user.email || user.admin ?
                                         <button className="delete-button" onClick={() => { handleDelete(comment._id) }}>Delete Comment</button>
                                         : ''}
                                 </div>

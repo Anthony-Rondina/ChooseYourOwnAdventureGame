@@ -304,11 +304,33 @@ textarea {
   /* overflow: scroll; */
 }
 
+.cardBox-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* border: solid blue 2px; */
+  height: auto;
+}
+
+.card-box-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* border: solid blue 2px; */
+  height: 100%;
+}
+
 .cardBox {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
   /* scrollbar-width: 1px; */
   z-index: 5;
   position: absolute;
   width: 50vw;
+  max-width: 300px;
   min-width: 50vw;
   height: 80vh;
   /* min-height: 800px; */
@@ -367,6 +389,10 @@ textarea {
 
 .cardImage {
   width: 500px;
+}
+
+.music-click {
+  position: absolute;
 }
 
 .clueBox {
@@ -762,6 +788,8 @@ hr {
 }
 
 .clue-description {
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
   text-align: center;
   color: black;
   font-size: 1.5em;

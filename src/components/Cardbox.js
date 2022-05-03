@@ -7,7 +7,9 @@ export const Cardbox = ({ clueToggle, getData, clues, toggleClueView, getClueDat
                 <h2>{clues.chapter}</h2>
                 <h2>{`Clue: #${clues.cardNumber}`}</h2>
             </div>
-            <img src={clues.img} />
+            <div className="card-box-image">
+                <img src={clues.img} />
+            </div>
             <p className="clue-description">{clues.description}</p>
             <h2 id="clickable" onClick={() => { getData(clues.choice1._id) }}>{clues.cardPrompt1}</h2>
             <h2 id="clickable" onClick={() => { getClueData(clues.clue1._id) }}>{clues.cluePrompt1}</h2>

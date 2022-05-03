@@ -3,7 +3,7 @@ import axios from "axios"
 import { Link } from "react-router-dom"
 import Navbar from "../../components/Navbar"
 import { Cardbox } from "../../components/Cardbox"
-import song from "../../creepymusic.mp3"
+// import creepyMusic from "../../../creepymusic.mp3"
 export default function StoryCardIndex() {
     const [cards, setCards] = useState({})
     const [clues, setClues] = useState({})
@@ -15,8 +15,7 @@ export default function StoryCardIndex() {
     const [visionToggle, setVisionToggle] = useState(false)
     const [red, setRed] = useState(3)
     const [yellow, setYellow] = useState(3)
-    let creepyMusic = new Audio(song)
-
+    let creepyMusic = new Audio('creepymusic.mp3')
     const togglePlay = () => {
         if (creepyMusic.paused) {
             creepyMusic.play();
@@ -174,7 +173,7 @@ export default function StoryCardIndex() {
                             </div>
                             <button className="reset" onClick={resetYellow}>Reset</button>
                         </div>
-                        <p onClick={togglePlay}><button className="music">Play Creepy Music</button></p>
+                        <a href="https://www.youtube.com/watch?v=XCKQgJ0Eqlg" target="_blank"><button className="music">Play Creepy Music</button></a>
 
                     </div>
                     <img className="drawerPic" src="https://i.imgur.com/zcaBRl6.png" alt="alternative text" />
@@ -198,8 +197,9 @@ export default function StoryCardIndex() {
                     <h2>{`Card #${cards.cardNumber}`}</h2>
                 </div>
 
-
-                <img className="cardImage" src={cards.img}></img>
+                <div className="cardBox-image">
+                    <img className="cardImage" src={cards.img} />
+                </div>
                 <p className="cardDescription">{cards.description}</p>
                 <hr className="style-seven" />
                 <div className="optionDiv">

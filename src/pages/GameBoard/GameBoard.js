@@ -3,6 +3,7 @@ import axios from "axios"
 import { Link } from "react-router-dom"
 import Navbar from "../../components/Navbar"
 import { Cardbox } from "../../components/Cardbox"
+import song from "../../creepymusic.mp3"
 export default function StoryCardIndex() {
     const [cards, setCards] = useState({})
     const [clues, setClues] = useState({})
@@ -14,6 +15,18 @@ export default function StoryCardIndex() {
     const [visionToggle, setVisionToggle] = useState(false)
     const [red, setRed] = useState(3)
     const [yellow, setYellow] = useState(3)
+    let creepyMusic = new Audio(song)
+
+    const togglePlay = () => {
+        if (creepyMusic.paused) {
+            creepyMusic.play();
+        }
+        else {
+            creepyMusic.pause();
+        }
+    };
+
+
     const getData = (input) => {
         (async () => {
             try {
@@ -161,7 +174,7 @@ export default function StoryCardIndex() {
                             </div>
                             <button className="reset" onClick={resetYellow}>Reset</button>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=XCKQgJ0Eqlg" target="_blank"><button className="music">Play Creepy Music</button></a>
+                        <p onClick={togglePlay}><button className="music">Play Creepy Music</button></p>
 
                     </div>
                     <img className="drawerPic" src="https://i.imgur.com/zcaBRl6.png" alt="alternative text" />

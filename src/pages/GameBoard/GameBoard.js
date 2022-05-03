@@ -234,7 +234,7 @@ export default function StoryCardIndex() {
                 <hr className="style-seven" />
             </div>
             <Cardbox clueToggle={clueToggle} getData={getData} clues={clues} toggleClueView={toggleClueView} getClueData={getClueData} />
-            {/* <div className="clueBox" style={{ opacity: clueToggle ? "100" : "0", right: clueToggle ? "0" : "-500px    " }}>
+            <div className="clueBox" style={{ opacity: clueToggle ? "100" : "0", right: clueToggle ? "0" : "-500px    " }}>
                 <div className="chapNumBox">
                     <button className="clueClose closeWindow" onClick={toggleClueView}>x</button>
                     <h2>{clues.chapter}</h2>
@@ -242,10 +242,11 @@ export default function StoryCardIndex() {
                 </div>
                 <img src={clues.img} />
                 <p className="clue-description">{clues.description}</p>
+                <p className="clueChoiceHeader">If presented with a green choice below, click one to proceed:</p>
                 <h2 id="clickable" onClick={() => { getData(clues.choice1._id) }}>{clues.cardPrompt1}</h2>
                 <h2 id="clickable" onClick={() => { getClueData(clues.clue1._id) }}>{clues.cluePrompt1}</h2>
                 <h2 id="clickable" onClick={() => { getClueData(clues.clue2._id) }}>{clues.cluePrompt2}</h2>
-            </div> */}
+            </div>
 
         </main >
     )

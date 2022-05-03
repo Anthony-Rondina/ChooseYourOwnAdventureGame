@@ -335,7 +335,7 @@ textarea {
   position: absolute;
   width: 32vw;
   /* min-width: 400px; */
-  height: 400px;
+  height: 450px;
   min-height: 400px;
   /* border: solid red; */
   background-color: #e2cfab;
@@ -700,6 +700,14 @@ hr {
 }
 
 .cardDescription {
+  font-family: 'Gloria Hallelujah', cursive;
+  color: black;
+  font-size: 2em;
+  white-space: pre-wrap;
+}
+
+.clueChoiceHeader {
+  text-align: center;
   font-family: 'Gloria Hallelujah', cursive;
   color: black;
   font-size: 2em;

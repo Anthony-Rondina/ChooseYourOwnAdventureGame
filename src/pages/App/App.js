@@ -13,6 +13,7 @@ import EditClue from '../EditCard/EditClue';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Feedback from '../Feedback/Feedback';
+import HowTo from '../HowTo';
 function App() {
   const [user, setUser] = useState(getUser())
   const [editCard, setEditCard] = useState({})
@@ -40,6 +41,7 @@ function App() {
           <Route path="/feedback" element={<Feedback user={user} />}></Route>
           <Route path="/createCard" element={<NewCard />}></Route>
           <Route path="/createClue" element={<NewClue />}></Route>
+          <Route path="/howto" element={<HowTo />}></Route>
           <Route path="/cards" element={<CardIndex setEditCard={setEditCard} />}></Route>
           <Route path="/clues" element={<ClueCardIndex setEditClue={setEditClue} />}></Route>
           <Route path="/cards/:number" element={<EditCard editCard={editCard} />}></Route>
@@ -49,6 +51,7 @@ function App() {
         //normal users can only access gameboard and feedback
         <Routes>
           <Route path="/" element={<GameBoard />}></Route>
+          <Route path="/howto" element={<HowTo />}></Route>
           <Route path="/feedback" element={<Feedback user={user} />}></Route>
         </Routes>
         :

@@ -8,6 +8,7 @@ export default function Feedback({ user }) {
     const [toggle, setToggle] = useState(false)
     const content = useRef()
     const title = useRef()
+
     let token = localStorage.getItem("token")
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -95,6 +96,7 @@ export default function Feedback({ user }) {
                                 </div>
                                 <div className="comment-user">
                                     <p>{`Posted by: ${comment.user.name}`}</p>
+
                                     {user.email === comment.user.email || user.admin ?
                                         <button className="delete-button" onClick={() => { handleDelete(comment._id) }}>Delete Comment</button>
                                         : ''}

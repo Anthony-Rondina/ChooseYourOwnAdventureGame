@@ -147,17 +147,17 @@ export default function StoryCardIndex() {
                     <div className="drawerContents">
                         <div className="counterWrapperRed">
                             <div className="counterButtons">
-                                <button onClick={decreaseRed}>-</button>
+                                <button id="decreaseButton" onClick={decreaseRed}>-</button>
                                 <span className="readout">Psychic Meter</span>
-                                <button onClick={increaseRed}>+</button>
+                                <button id="increaseButton" onClick={increaseRed}>+</button>
                             </div>
                             <button className="reset" onClick={resetRed}>Reset</button>
                         </div>
                         <div className="counterWrapperYellow">
                             <div className="counterButtons">
-                                <button onClick={decreaseYellow}>-</button>
+                                <button id="decreaseButton" onClick={decreaseYellow}>-</button>
                                 <span className="readout">Danger Meter</span>
-                                <button onClick={increaseYellow}>+</button>
+                                <button id="increaseButton" onClick={increaseYellow}>+</button>
                             </div>
                             <button className="reset" onClick={resetYellow}>Reset</button>
                         </div>

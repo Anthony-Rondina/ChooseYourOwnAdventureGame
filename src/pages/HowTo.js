@@ -16,7 +16,7 @@ const HowTo = () => {
             </div>
             <div className="tutorial-box">
                 <h2 className="logo">Psychic Scale</h2>
-                <p className="how-to-text">   Having a high Phsycic level will allow you to receive additional clues throughout your adventures. You also recieve more beneficial rewards! </p>
+                <p className="how-to-text">   Having a high Psychic level will allow you to receive additional clues throughout your adventures. You also recieve more beneficial rewards! </p>
             </div>
             <div className="tutorial-box">
                 <h2 className="logo">Death</h2>

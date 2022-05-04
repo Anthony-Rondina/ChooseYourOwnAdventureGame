@@ -29,6 +29,7 @@ export default function EditCard({ editCard }) {
     const sound = useRef()
     const description = useRef()
     const chapterNumber = useRef()
+    const h1 = useRef()
 
 
     const handleSubmit = async (evt) => {
@@ -66,10 +67,8 @@ export default function EditCard({ editCard }) {
             {/* <Navbar /> */}
             <div className="newCardOuterWrapper">
                 <div className="createNewCard">
-                    <h1>Edit This Card</h1>
+                    <h1 ref={h1}>Edit This Card</h1>
                     <a href="/cards"><button>Back to index</button></a>
-
-
                     <form onSubmit={(evt) => { handleSubmit(evt) }}>
                         <p>Does the card have a picture?</p>
                         <input defaultValue={editCard.img} placeholder='Enter image link' type="text" ref={img} />

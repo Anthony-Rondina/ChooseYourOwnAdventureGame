@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import axios from "axios"
 import { Link } from "react-router-dom"
 import Navbar from "../../components/Navbar"
 import { Cardbox } from "../../components/Cardbox"
-// import creepyMusic from "../../../creepymusic.mp3"
+import song from "../../creepymusic.mp3"
 export default function StoryCardIndex() {
     const [cards, setCards] = useState({})
     const [clues, setClues] = useState({})
@@ -15,15 +15,23 @@ export default function StoryCardIndex() {
     const [visionToggle, setVisionToggle] = useState(false)
     const [red, setRed] = useState(3)
     const [yellow, setYellow] = useState(3)
-    let creepyMusic = new Audio('creepymusic.mp3')
-    const togglePlay = () => {
-        if (creepyMusic.paused) {
-            creepyMusic.play();
-        }
-        else {
-            creepyMusic.pause();
-        }
-    };
+
+
+
+    // let creepyMusic = new Audio(song)
+    // const music = useRef(creepyMusic)
+
+
+    // const togglePlay = () => {
+    //     if (music.current.paused) {
+    //         music.current.play();
+    //     }
+    //     else {
+    //         music.current.pause();
+    //     }
+    // };
+
+
 
 
     const getData = (input) => {
@@ -127,9 +135,6 @@ export default function StoryCardIndex() {
             try {
                 const response = await axios.get(`/api/cards/6260bb10959680ed4d55cb28`)
                 setCards(response.data.foundCard)
-                // console.log(response.data.foundCard)
-                // console.log(cards)
-                // console.log(cards.description)
             } catch (err) {
                 console.log(err)
 
@@ -173,6 +178,7 @@ export default function StoryCardIndex() {
                             </div>
                             <button className="reset" onClick={resetYellow}>Reset</button>
                         </div>
+                        {/* <button className="music" onClick={togglePlay}> Play Creepy Music</button> */}
                         <a href="https://www.youtube.com/watch?v=XCKQgJ0Eqlg" target="_blank"><button className="music">Play Creepy Music</button></a>
 
                     </div>

@@ -805,6 +805,11 @@ hr {
   width: 80px;
 }
 
+.how-to-pic {
+  width: 400px;
+  border: solid black 2px;
+}
+
 .anthony:hover {
   filter: drop-shadow(0 0 .5rem white);
 

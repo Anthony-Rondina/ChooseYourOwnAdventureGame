@@ -4,9 +4,7 @@ const HowTo = () => {
             <h1 id="how-to-title">How To Play</h1>
             <div className="tutorial-box">
                 <h2 className="logo">Objective of the Game</h2>
-                <p className="how-to-text">   You start the game suffering from a constant nightmare. Click the game board to "flip" it over and view the details of the dream. After 2 minutes click to close and start the game by clicking on the top deck of cards.
-
-                    This demo only contains Chapter 1 of 5. Your objective is to complete Chapter 1 and get inside the Marsden House.</p>
+                <p className="how-to-text">{`You start the game suffering from a constant nightmare. Click the game board to "flip" it over and view the details of the dream. After 2 minutes click to close and start the game by clicking on the top deck of cards.\n\n   This demo only contains Chapter 1 of 5. Your objective is to complete Chapter 1 and get inside the Marsden House.`}   </p>
             </div>
             <div className="tutorial-box">
                 <h2 className="logo">Items</h2>

@@ -196,7 +196,7 @@ export default function StoryCardIndex() {
                 <img className={`yellowIcon yellow${yellow}`} src="https://i.imgur.com/WGFsmeS.png" alt="alternative text" />
                 <img className={`redIcon red${red}`} src="https://i.imgur.com/VHepIiE.png" alt="alternative text" />
             </div>
-            <div className={`cardBox`} style={{ opacity: cardToggle ? "100" : "0", right: cardToggle ? "0" : "-500px" }}>
+            <div className={`cardBox`} style={{ opacity: cardToggle ? "100" : "0", right: cardToggle ? "0" : "-900px" }}>
                 <div className="chapNumBox">
                     <button className="cardClose closeWindow" onClick={toggleCardView}>x</button>
                     <h2>{cards.chapter}</h2>

@@ -66,7 +66,6 @@ router.post('/:id/comments/', check, async (req, res) => {
         const { id } = req.params
         //Find the post from the ID in params
         const blogPost = await Post.findById(body)
-        console.log(`Post is now ${blogPost}`)
         //Make the comment from the form's body
         const comment = new Comment(body)
         //assign comment to user

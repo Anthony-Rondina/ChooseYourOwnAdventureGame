@@ -512,7 +512,6 @@ main {
   font-size: 2rem;
   margin-top: 10px;
   filter: drop-shadow(0 0 1rem black);
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -525,13 +524,29 @@ main {
   height: 40px;
 }
 
+.logoNav {
+  font-size: 2rem;
+  margin-top: 10px;
+  filter: drop-shadow(0 0 1rem black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  width: 100%;
+  border: solid white 2px;
+  background-color: red;
+  border-radius: 50px;
+  height: 40px;
+}
+
 header {
   height: 10%;
   background-image: linear-gradient(rgb(53, 53, 53), #000000);
   /* background-color: black; */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* flex-direction: column; */
+  justify-content: space-around;
   align-items: center;
   z-index: 7;
   border-bottom: solid 5px gray;
@@ -773,6 +788,28 @@ hr {
   white-space: pre-wrap;
 }
 
+.navMiddle {
+  /* border: solid red; */
+}
+
+.me-box {
+  /* position: absolute;
+  margin-top: 10px;
+  margin-left: 82%; */
+}
+
+.anthony {
+  cursor: pointer;
+  border-radius: 50px;
+  border: solid white 1px;
+  width: 80px;
+}
+
+.anthony:hover {
+  filter: drop-shadow(0 0 .5rem white);
+
+}
+
 .clueChoiceHeader {
   text-align: center;
   font-family: 'Gloria Hallelujah', cursive;
@@ -875,15 +912,15 @@ li:hover {
 
 .user {
   /* border: solid white .5px; */
-  margin-left: 80px;
-  margin-top: -20px;
+  /* margin-left: 80px;
+  margin-top: -20px; */
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  left: 0;
+  /* position: absolute; */
+  /* left: 0; */
   height: 8%;
 }
 

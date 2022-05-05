@@ -8,8 +8,9 @@ WireFrame for Game Board Page:
 
 Techincal Challenges:
 1. Relating data such as cards, clues and users.
-2. Animations
-3. User Authentication
+2. Comments and linking them to users.
+3. Animations.
+4. User Authentication.
 
 Technologies Used:
 

@@ -24,13 +24,13 @@ export default function Navbar({ user, setUser, setShowLogin, showLogin }) {
                 <div className="logoNav">CHOOSE YOUR OWN ADVENTURE</div>
                 <div className="linkBar">
                     <p>|</p>
-                    <a href="/feedback"><p>Feedback</p></a>
+                    <a href="/howto"><p>How to Play</p></a>
                     <p>|</p>
                     <a href="/"><p>Play the Game!</p></a>
                     <p>|</p>
-                    <a href="/howto"><p>How to Play</p></a>
-                    <p>|</p>
                     <a href="https://www.zmangames.com/en/products/choose-your-own-adventure-house-danger/" target="_blank"><p>Buy the Game!</p></a>
+                    <p>|</p>
+                    <a href="/feedback"><p>Feedback</p></a>
                     <p>|</p>
                     {user ? user.admin ?
                         <>

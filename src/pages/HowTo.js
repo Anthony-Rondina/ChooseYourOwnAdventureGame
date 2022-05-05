@@ -23,7 +23,7 @@ const HowTo = () => {
             </div>
             <div className="tutorial-box">
                 <h2 className="logo">Death</h2>
-                <p className="how-to-text">   Death is an ever present danger, but take heart. Death is NOT the end! You can keep playing if you died. Follow the instructions on the card and continue on your adventure.</p>
+                <p className="how-to-text">   Death is an ever present danger, but take heart. Death is NOT the end! You can keep playing if you die. Follow the instructions on the card and continue on your adventure.</p>
                 <img className="how-to-pic" src="https://i.imgur.com/4ZzXpJi.png" alt="" />
             </div>
         </div>

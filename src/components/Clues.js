@@ -14,7 +14,7 @@ export const Clues = ({ setEditClue, clues, loading }) => {
 
                         <Link to={`/clues/${clue._id}`} onClick={() => { setEditClue(clue) }}><div className='indexCard'>
                             <p className='clueIndexCardNumber'>{`${clue.cardNumber}`}</p>
-                            <p id='indexCardDetail'>{`The clue number is ${clue.chapter}`}</p>
+                            <p id='indexCardDetail'>{`Clue ${clue.cardNumber} in ${clue.chapter}`}</p>
                             {/* <img src={clue.img} /> */}
                         </div></Link>
                     )

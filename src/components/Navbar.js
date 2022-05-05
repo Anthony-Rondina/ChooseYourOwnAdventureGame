@@ -34,7 +34,7 @@ export default function Navbar({ user, setUser, setShowLogin, showLogin }) {
                     <p>|</p>
                     {user ? user.admin ?
                         <>
-                            <a href="/cards"><p>Go to card Index</p></a>
+                            <a href="/cards"><p>Go to Card Index</p></a>
                             <p>|</p>
                             <a href="/clues"><p>Go to Clue Index</p></a>
                             <p>|</p>

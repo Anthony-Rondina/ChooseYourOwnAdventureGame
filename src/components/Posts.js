@@ -14,7 +14,7 @@ export const Posts = ({ setEditCard, cards, loading }) => {
 
                         <Link to={`/cards/${card._id}`} onClick={() => { setEditCard(card) }}><div className='indexCard'>
                             <p className='indexCardNumber'>{`${card.cardNumber}`}</p>
-                            <p id='indexCardDetail'>{`The card number is ${card.chapter}`}</p>
+                            <p id='indexCardDetail'>{`Story Card ${card.cardNumber} for ${card.chapter}`}</p>
                         </div></Link>
                     )
                 })

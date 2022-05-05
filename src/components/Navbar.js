@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { logout } from '../utilities/users-service'
+
+import { Link } from "react-router-dom"
 export default function Navbar({ user, setUser, setShowLogin, showLogin }) {
     function handleLogOut() {
         logout();
@@ -44,7 +46,7 @@ export default function Navbar({ user, setUser, setShowLogin, showLogin }) {
                 </div>
             </div>
             <div className="me-box">
-                <a href="www.linkedin.com/in/arondina" target="_blank">
+                <a href={'//www.linkedin.com/in/arondina'} target="_blank" >
                     <img className="anthony" src="https://i.imgur.com/KnCMI31.jpg" alt="Anthony" />
                 </a>
                 {/* <p>Made By: Anthony Rondina</p> */}

@@ -2,6 +2,15 @@
 [Link to Project](https://ants-choose-your-own-adventure.herokuapp.com
 )
 ![screenshot](https://i.imgur.com/ewp4GtW.jpg)
+
+WireFrame for Game Board Page:
+![screenshot](https://i.imgur.com/d2Md3tH.png)
+
+Techincal Challenges:
+1. Relating data such as cards, clues and users.
+2. Animations
+3. User Authentication
+
 Technologies Used:
 
 1. MongoDB

@@ -7,8 +7,19 @@ export default function Navbar({ user, setUser, setShowLogin, showLogin }) {
         logout();
         setUser(null);
     }
+
+    const positve = () => {
+        setShowLogin(true)
+    }
+
+    const negative = () => {
+        setShowLogin(false)
+    }
+
     return (
         <header>
+
+<Link to="/auth" oncClick={positve()}><button>Sign in</button></Link>
 
             <div className="user">
                 {user ?

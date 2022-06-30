@@ -18,6 +18,8 @@ function App() {
   const [user, setUser] = useState(getUser())
   const [editCard, setEditCard] = useState({})
   const [editClue, setEditClue] = useState({})
+  const [chosenUser, setChosenUser] = useState({})
+  const [chosenWork, setChosenWork] = useState({})
   const [showLogin, setShowLogin] = useState(true);
 
   useEffect(() => {
@@ -31,7 +33,7 @@ function App() {
     })()
   }, [])
 
-
+  //use 4 digit code to authenticate admin in user creation
   return (
     <div className="App">
       <Navbar showLogin={showLogin} setShowLogin={setShowLogin} setUser={setUser} user={user} />
@@ -53,10 +55,12 @@ function App() {
           <Route path="/" element={<GameBoard />}></Route>
           <Route path="/howto" element={<HowTo />}></Route>
           <Route path="/feedback" element={<Feedback user={user} />}></Route>
+          <Route path="/auth" element={<AuthPage user={user} showLogin={showLogin} setShowLogin={setShowLogin} />}></Route>
         </Routes>
         :
         //Non users can only access login page
         <AuthPage showLogin={showLogin} setUser={setUser} />
+        // <homepage></homepage>
       }
       <Footer />
     </div>

@@ -69,7 +69,6 @@ router.delete("/:id", (req, res) => {
 
 //Show
 router.get('/:id', async (req, res) => {
-
     const query = Card.findById(req.params.id).populate('choice1 choice2 choice3 choice4 previousCard previousCard2 previousCard3 previousCard4 clue1 clue2 deathRoute deathRoute2 deathRoute3')
     query.exec((err, foundCard) => {
         if (!err) {
@@ -78,7 +77,6 @@ router.get('/:id', async (req, res) => {
             res.status(400).json({ err: error.message })
         }
     })
-
 })
 
 module.exports = router

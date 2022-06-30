@@ -1,15 +1,19 @@
 
 [Link to Project](https://ants-choose-your-own-adventure.herokuapp.com
 )
-![screenshot](https://i.imgur.com/ewp4GtW.jpg)
+Main  Page:
+![screenshot](https://i.imgur.com/aPydPtB.png)
 
-WireFrame for Game Board Page:
-![screenshot](https://i.imgur.com/d2Md3tH.png)
+User Profile Page:
+![screenshot](https://i.imgur.com/D9VnuxF.png)
+
+NavBar:
+![screenshot](https://i.imgur.com/ez1UeVR.png)
 
 Techincal Challenges:
-1. Relating data such as cards, clues and users.
-2. Comments and linking them to users.
-3. Animations.
+1. Relating data such as art, comments and users.
+2. Filtering search results.
+3. Group Collaboration.
 4. User Authentication.
 
 Technologies Used:
@@ -28,3 +32,4 @@ Technologies Used:
 12. Postman
 13. Git
 14. GitHub
+15. Trello
